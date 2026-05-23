@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - NGO</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --primary:#1f4ed8;
+  --primary-dark:#0b1f5e;
+  --secondary:#111827;
+  --accent:#d4af37;
+  --white:#ffffff;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --soft-blue:#eef3ff;
+  --shadow:0 18px 45px rgba(7,26,82,.14);
+  --shadow-hover:0 28px 70px rgba(7,26,82,.24);
+  --gradient-main:linear-gradient(135deg,#071a52,#1438a6,#1f4ed8);
+}
+
+body{
+  font-family:"Poppins",sans-serif;
+  background:var(--soft-blue);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+.container{
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+}
+
+section{
+  padding:90px 0;
+}
+
+p{
+  color:var(--muted);
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+.light-bg{
+  background:var(--white);
+}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:60px;
+  align-items:center;
+}
+
+/* SECTION TITLE */
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.section-title span,
+.about-hero .tag{
+  display:inline-block;
+  border-radius:40px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.section-title span{
+  color:var(--primary);
+  background:var(--white);
+  border:1px solid rgba(212,175,55,.45);
+  padding:8px 18px;
+  font-size:13px;
+  box-shadow:0 10px 24px rgba(7,26,82,.08);
+}
+
+.section-title h2,
+.about-content h2,
+.founder-content h2{
+  font-size:clamp(30px,4vw,42px);
+  color:var(--secondary);
+  font-weight:900;
+  line-height:1.2;
+}
+
+.section-title h2{
+  margin-top:14px;
+}
+
+.section-title h2::after{
+  content:"";
+  width:90px;
+  height:4px;
+  background:var(--accent);
+  display:block;
+  margin:18px auto 0;
+  border-radius:50px;
+}
+
+/* HERO */
+.about-hero{
+  position:relative;
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  background:
+    linear-gradient(115deg,rgba(7,26,82,.92),rgba(20,56,166,.82),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1600&auto=format&fit=crop")
+    center/cover no-repeat;
+}
+
+.about-hero::before,
+.about-hero::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  filter:blur(18px);
+}
+
+.about-hero::before{
+  width:540px;
+  height:540px;
+  background:rgba(212,175,55,.22);
+  top:-170px;
+  right:-140px;
+}
+
+.about-hero::after{
+  width:430px;
+  height:430px;
+  background:rgba(31,78,216,.25);
+  bottom:-140px;
+  left:-120px;
+}
+
+.about-hero .container{
+  position:relative;
+  z-index:2;
+}
+
+.about-hero .tag{
+  padding:11px 24px;
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(212,175,55,.55);
+  color:#fff3b0;
+  margin-bottom:25px;
+  backdrop-filter:blur(10px);
+}
+
+.about-hero h1{
+  color:#fff;
+  font-size:clamp(38px,7vw,72px);
+  line-height:1.08;
+  font-weight:900;
+  max-width:950px;
+  margin:auto;
+  text-shadow:0 12px 34px rgba(0,0,0,.35);
+}
+
+.about-hero h1 span{
+  color:var(--accent);
+}
+
+.about-hero p{
+  max-width:780px;
+  margin:30px auto 0;
+  color:#eef3ff;
+  font-size:clamp(15px,2vw,19px);
+}
+
+/* IMAGE + CONTENT */
+.about-image img,
+.founder-img img{
+  border-radius:32px;
+  box-shadow:var(--shadow-hover);
+  border:6px solid var(--white);
+}
+
+.about-content h2,
+.founder-content h2{
+  margin-bottom:25px;
+}
+
+.about-content p{
+  margin-bottom:20px;
+}
+
+.founder-content .small-tag{
+  color:var(--primary);
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+.founder-content h4{
+  margin-top:25px;
+  color:var(--primary);
+}
+
+/* COMMON CARDS */
+.story-box,
+.vision-card,
+.value-box,
+.team-card,
+.reg-item,
+.cert-card,
+.partner-box,
+.timeline-item .content{
+  background:var(--white);
+  border:1px solid rgba(212,175,55,.28);
+  box-shadow:var(--shadow);
+}
+
+.vision-card,
+.value-box,
+.team-card,
+.reg-item,
+.cert-card,
+.partner-box{
+  transition:.4s ease;
+}
+
+.vision-card:hover,
+.value-box:hover,
+.team-card:hover,
+.cert-card:hover,
+.partner-box:hover{
+  transform:translateY(-10px);
+  box-shadow:var(--shadow-hover);
+}
+
+/* STORY */
+.story-box{
+  max-width:950px;
+  margin:auto;
+  text-align:center;
+  font-size:18px;
+  padding:42px;
+  border-radius:30px;
+}
+
+/* GRIDS */
+.vision-grid,
+.values-grid,
+.team-grid,
+.registration-box,
+.cert-grid,
+.partners-grid{
+  display:grid;
+  gap:30px;
+}
+
+.vision-grid{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.values-grid,
+.team-grid,
+.registration-box,
+.partners-grid{
+  grid-template-columns:repeat(4,1fr);
+}
+
+.cert-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+
+/* VISION */
+.vision-card{
+  padding:45px;
+  border-radius:30px;
+}
+
+.vision-card .icon{
+  width:75px;
+  height:75px;
+  border-radius:22px;
+  background:var(--gradient-main);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:34px;
+  margin-bottom:25px;
+  box-shadow:0 14px 35px rgba(31,78,216,.28);
+}
+
+.vision-card h3{
+  font-size:28px;
+  margin-bottom:18px;
+  color:var(--secondary);
+}
+
+/* VALUE / REG / CERT */
+.value-box,
+.reg-item{
+  padding:35px;
+  border-radius:25px;
+  text-align:center;
+}
+
+.cert-card{
+  padding:40px;
+  border-radius:25px;
+}
+
+.value-box h3,
+.reg-item h4,
+.cert-card h3{
+  color:var(--secondary);
+  margin-bottom:14px;
+}
+
+/* TEAM */
+.team-card{
+  border-radius:25px;
+  overflow:hidden;
+  text-align:center;
+}
+
+.team-card img{
+  height:320px;
+  object-fit:cover;
+}
+
+.team-card h3{
+  margin-top:22px;
+  color:var(--secondary);
+}
+
+.team-card span{
+  display:block;
+  color:var(--primary);
+  margin:10px 0 25px;
+  font-weight:700;
+}
+
+/* TIMELINE */
+.timeline{
+  position:relative;
+  max-width:900px;
+  margin:auto;
+}
+
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  width:4px;
+  height:100%;
+  background:var(--primary);
+  transform:translateX(-50%);
+  border-radius:50px;
+}
+
+.timeline-item{
+  position:relative;
+  width:50%;
+  padding:20px 40px;
+  margin-bottom:40px;
+}
+
+.timeline-item:nth-child(odd){
+  left:0;
+  text-align:right;
+}
+
+.timeline-item:nth-child(even){
+  left:50%;
+}
+
+.timeline-item .year{
+  display:inline-block;
+  padding:10px 22px;
+  background:var(--gradient-main);
+  color:#fff;
+  border-radius:50px;
+  font-weight:800;
+  margin-bottom:15px;
+}
+
+.timeline-item .content{
+  padding:30px;
+  border-radius:25px;
+}
+
+.timeline-item h3{
+  color:var(--secondary);
+  margin-bottom:12px;
+}
+
+/* PARTNERS */
+.partner-box{
+  padding:30px;
+  border-radius:25px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:180px;
+}
+
+.partner-box img{
+  max-width:140px;
+  object-fit:contain;
+}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .values-grid,
+  .team-grid,
+  .registration-box,
+  .partners-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:900px){
+  section{
+    padding:75px 0;
+  }
+
+  .grid-2,
+  .vision-grid,
+  .cert-grid{
+    grid-template-columns:1fr;
+  }
+
+  .grid-2{
+    gap:40px;
+  }
+
+  .timeline::before{
+    left:20px;
+  }
+
+  .timeline-item{
+    width:100%;
+    left:0 !important;
+    text-align:left !important;
+    padding:20px 0 20px 60px;
+  }
+}
+
+@media(max-width:768px){
+  .container{
+    padding:0 16px;
+  }
+
+  section{
+    padding:65px 0;
+  }
+
+  .section-title{
+    margin-bottom:40px;
+  }
+
+  .values-grid,
+  .team-grid,
+  .registration-box,
+  .partners-grid{
+    grid-template-columns:1fr;
+  }
+
+  .story-box,
+  .vision-card,
+  .value-box,
+  .reg-item,
+  .cert-card,
+  .timeline-item .content{
+    padding:26px 22px;
+    border-radius:22px;
+  }
+
+  .about-image img,
+  .founder-img img{
+    border-radius:22px;
+  }
+
+  .team-card img{
+    height:280px;
+  }
+
+  .about-hero{
+    min-height:78vh;
+    padding:90px 0;
+  }
+}
+
+@media(max-width:480px){
+  .container{
+    padding:0 14px;
+  }
+
+  section{
+    padding:55px 0;
+  }
+
+  .about-hero{
+    min-height:auto;
+    padding:95px 0 80px;
+  }
+
+  .about-hero .tag{
+    font-size:12px;
+    padding:9px 16px;
+  }
+
+  .section-title span{
+    font-size:11px;
+    padding:7px 14px;
+  }
+
+  .story-box{
+    font-size:15px;
+  }
+
+  .vision-card .icon{
+    width:62px;
+    height:62px;
+    font-size:28px;
+    border-radius:18px;
+  }
+
+  .vision-card h3{
+    font-size:23px;
+  }
+
+  .team-card img{
+    height:240px;
+  }
+
+  .partner-box{
+    min-height:130px;
+  }
+
+  .partner-box img{
+    max-width:120px;
+  }
+
+  .timeline::before{
+    left:14px;
+  }
+
+  .timeline-item{
+    padding-left:42px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div id="header"></div>
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="about-hero">
+
+    <div class="container">
+
+        <span class="tag">About Our NGO</span>
+
+        <h1>
+            Together We Build
+            <span>Hope & Humanity</span>
+        </h1>
+
+        <p>
+            Empowering lives through education, healthcare,
+            social welfare, and sustainable development initiatives.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     INTRODUCTION
+========================= -->
+
+<section>
+
+    <div class="container grid-2">
+
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop" alt="">
+        </div>
+
+        <div class="about-content">
+
+            <h2>NGO Introduction</h2>
+
+            <p>
+                Our NGO is dedicated to transforming lives and creating
+                sustainable opportunities for underprivileged communities.
+                We work towards empowering children, women, and families
+                through impactful social initiatives.
+            </p>
+
+            <p>
+                From education and healthcare to environmental sustainability
+                and skill development, our mission is to bring positive
+                change and create a better future for society.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     STORY
+========================= -->
+
+<section class="light-bg">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Our Journey</span>
+            <h2>Our Story</h2>
+        </div>
+
+        <div class="story-box">
+
+            <p>
+                What started as a small initiative with a few volunteers
+                has now grown into a movement impacting thousands of lives.
+                Our journey is built on compassion, dedication, and the belief
+                that every individual deserves equal opportunities and dignity.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     VISION & MISSION
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Purpose</span>
+            <h2>Vision & Mission</h2>
+        </div>
+
+        <div class="vision-grid">
+
+            <div class="vision-card">
+
+                <div class="icon">🌍</div>
+
+                <h3>Our Vision</h3>
+
+                <p>
+                    To create a society where every person has access
+                    to education, healthcare, equality, and opportunities
+                    for growth.
+                </p>
+
+            </div>
+
+            <div class="vision-card">
+
+                <div class="icon">🎯</div>
+
+                <h3>Our Mission</h3>
+
+                <p>
+                    To empower communities through impactful programs,
+                    awareness campaigns, humanitarian support,
+                    and sustainable development initiatives.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FOUNDER MESSAGE
+========================= -->
+
+<section class="light-bg">
+
+    <div class="container grid-2">
+
+        <div class="founder-img">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop" alt="">
+        </div>
+
+        <div class="founder-content">
+
+            <span class="small-tag">Founder’s Message</span>
+
+            <h2>A Message From Our Founder</h2>
+
+            <p>
+                “We believe that true change begins when communities unite
+                with compassion and purpose. Every small effort creates
+                a meaningful impact, and together we can build a brighter future.”
+            </p>
+
+            <h4>— Founder Name</h4>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     CORE VALUES
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Our Principles</span>
+            <h2>Core Values</h2>
+        </div>
+
+        <div class="values-grid">
+
+            <div class="value-box">
+                <h3>Integrity</h3>
+                <p>Transparency and accountability in everything we do.</p>
+            </div>
+
+            <div class="value-box">
+                <h3>Compassion</h3>
+                <p>Serving communities with empathy, care, and humanity.</p>
+            </div>
+
+            <div class="value-box">
+                <h3>Empowerment</h3>
+                <p>Helping people become self-reliant and confident.</p>
+            </div>
+
+            <div class="value-box">
+                <h3>Sustainability</h3>
+                <p>Creating long-term solutions with lasting social impact.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     TEAM
+========================= -->
+
+<section class="light-bg">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Our Members</span>
+            <h2>Team Members</h2>
+        </div>
+
+        <div class="team-grid">
+
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=900&auto=format&fit=crop">
+                <h3>Member Name</h3>
+                <span>President</span>
+            </div>
+
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=900&auto=format&fit=crop">
+                <h3>Member Name</h3>
+                <span>Project Head</span>
+            </div>
+
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=900&auto=format&fit=crop">
+                <h3>Member Name</h3>
+                <span>Volunteer Coordinator</span>
+            </div>
+
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=900&auto=format&fit=crop">
+                <h3>Member Name</h3>
+                <span>Operations Manager</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     REGISTRATION
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Legal Details</span>
+            <h2>NGO Registration Details</h2>
+        </div>
+
+        <div class="registration-box">
+
+            <div class="reg-item">
+                <h4>Registration No.</h4>
+                <p>XXXXXXX</p>
+            </div>
+
+            <div class="reg-item">
+                <h4>12A Certified</h4>
+                <p>Available</p>
+            </div>
+
+            <div class="reg-item">
+                <h4>80G Approved</h4>
+                <p>Available</p>
+            </div>
+
+            <div class="reg-item">
+                <h4>PAN Number</h4>
+                <p>XXXXXXXXXX</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     CERTIFICATIONS
+========================= -->
+
+<section class="light-bg">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Transparency</span>
+            <h2>Certifications & Transparency</h2>
+        </div>
+
+        <div class="cert-grid">
+
+            <div class="cert-card">
+                <h3>Government Registered</h3>
+                <p>Officially recognized and legally registered organization.</p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Financial Transparency</h3>
+                <p>Clear donation utilization and transparent reporting system.</p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Impact Reports</h3>
+                <p>Regular updates and reports shared with supporters.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     TIMELINE
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Growth Timeline</span>
+            <h2>Timeline / Journey</h2>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="year">2018</div>
+
+                <div class="content">
+                    <h3>NGO Founded</h3>
+                    <p>Started with the mission to support local communities.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2020</div>
+
+                <div class="content">
+                    <h3>Healthcare Campaigns</h3>
+                    <p>Organized free health check-up and awareness programs.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2023</div>
+
+                <div class="content">
+                    <h3>Education Expansion</h3>
+                    <p>Expanded scholarship and educational support initiatives.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2026</div>
+
+                <div class="content">
+                    <h3>Nationwide Reach</h3>
+                    <p>Collaborating with volunteers and partners across India.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     PARTNERS
+========================= -->
+
+<section class="light-bg">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Collaborations</span>
+            <h2>Partners & Collaborators</h2>
+        </div>
+
+        <div class="partners-grid">
+
+            <div class="partner-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg">
+            </div>
+
+            <div class="partner-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg">
+            </div>
+
+            <div class="partner-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg">
+            </div>
+
+            <div class="partner-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<div id="contact-form"></div>
+<div id="footer"></div>
+<script>
+ fetch("header.html")
+  .then(res => res.text())
+  .then(data => {
+    const headerBox = document.getElementById("header");
+    headerBox.innerHTML = data;
+
+    const menuBtn = headerBox.querySelector(".menu-btn");
+    const navLinks = headerBox.querySelector(".nav-links");
+
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener("click", function(e){
+        e.preventDefault();
+        e.stopPropagation();
+
+        navLinks.classList.toggle("show");
+
+        const icon = menuBtn.querySelector("i");
+        if(icon){
+          icon.classList.toggle("fa-bars");
+          icon.classList.toggle("fa-times");
+        }
+      });
+
+      navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("show");
+
+          const icon = menuBtn.querySelector("i");
+          if(icon){
+            icon.classList.add("fa-bars");
+            icon.classList.remove("fa-times");
+          }
+        });
+      });
+
+      document.addEventListener("click", function(e){
+        if(!headerBox.contains(e.target)){
+          navLinks.classList.remove("show");
+
+          const icon = menuBtn.querySelector("i");
+          if(icon){
+            icon.classList.add("fa-bars");
+            icon.classList.remove("fa-times");
+          }
+        }
+      });
+    }
+
+    loadGoogleTranslate();
+  })
+  .catch(err => console.log("Header Load Error:", err));
+
+function googleTranslateElementInit() {
+  const translateBox = document.getElementById("google_translate_element");
+
+  if (translateBox && translateBox.innerHTML.trim() === "") {
+
+    new google.translate.TranslateElement({
+      pageLanguage: "pa", // Punjabi is original language
+      includedLanguages: "en,hi,ur,pa,bn,ta,te,mr,gu,kn,ml,ne",
+      autoDisplay: false,
+      multilanguagePage: true,
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, "google_translate_element");
+
+  }
+}
+
+function loadGoogleTranslate() {
+
+  // Prevent duplicate script loading
+  if (document.getElementById("googleTranslateScript")) {
+    if (typeof google !== "undefined" && google.translate) {
+      googleTranslateElementInit();
+    }
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.id = "googleTranslateScript";
+  script.src =
+    "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+
+  document.body.appendChild(script);
+}
+
+    // Load Footer
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+      
+      fetch("contact.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("contact-form").innerHTML = data;
+  });
+
+  fetch("floating.html")
+  .then(res => res.text())
+  .then(data => {
+    document.body.insertAdjacentHTML("beforeend", data);
+  });
+</script>
+
+</body>
+</html>

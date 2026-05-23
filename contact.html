@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - NGO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --primary:#143f8f;
+  --secondary:#16213e;
+  --accent:#d4a24c;
+  --maroon:#7a1f2b;
+  --saffron:#f28c28;
+  --teal:#0f766e;
+  --white:#ffffff;
+  --text:#1f2937;
+  --muted:#5f6470;
+  --cream:#fff1d6;
+  --soft-green:#e8f3f1;
+  --soft-blue:#e8eef8;
+  --gradient-main:linear-gradient(135deg,#071f4f,#143f8f,#7a1f2b);
+  --gradient-warm:linear-gradient(135deg,#7a1f2b,#f28c28,#d4a24c);
+  --gradient-soft:linear-gradient(135deg,#fff1d6,#e8eef8,#e8f3f1);
+  --shadow:0 18px 45px rgba(22,33,62,.18);
+  --shadow-hover:0 28px 70px rgba(22,33,62,.28);
+}
+
+body{
+  font-family:"Poppins",sans-serif;
+  background:
+    radial-gradient(circle at 8% 8%,rgba(242,140,40,.22),transparent 30%),
+    radial-gradient(circle at 90% 12%,rgba(122,31,43,.18),transparent 30%),
+    radial-gradient(circle at 50% 95%,rgba(15,118,110,.18),transparent 35%),
+    var(--gradient-soft);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+.container{
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* HERO */
+.contact-hero{
+  min-height:55vh;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  padding:110px 20px;
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(115deg,rgba(7,31,79,.96),rgba(122,31,43,.78),rgba(20,63,143,.86)),
+    url("https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=1600&auto=format&fit=crop")
+    center/cover no-repeat;
+}
+
+.contact-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(242,140,40,.34),transparent 26%),
+    radial-gradient(circle at 15% 85%,rgba(15,118,110,.28),transparent 30%);
+  pointer-events:none;
+}
+
+.contact-hero .container{
+  position:relative;
+  z-index:2;
+}
+
+.contact-hero span{
+  display:inline-block;
+  padding:10px 24px;
+  border-radius:50px;
+  background:rgba(255,211,109,.16);
+  border:1px solid rgba(255,211,109,.38);
+  color:#ffd36d;
+  margin-bottom:20px;
+  font-weight:800;
+  box-shadow:0 10px 30px rgba(0,0,0,.16);
+}
+
+.contact-hero h1{
+  font-size:clamp(34px,6vw,58px);
+  color:#fff;
+  line-height:1.12;
+  text-shadow:0 8px 28px rgba(0,0,0,.30);
+}
+
+.contact-hero h1 b{
+  color:#ffd36d;
+}
+
+.contact-hero p{
+  max-width:780px;
+  margin:22px auto 0;
+  color:#fff7e8;
+  font-size:clamp(15px,2vw,18px);
+  line-height:1.8;
+}
+
+/* SECTION TITLE */
+.contact-section{
+  padding:90px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:55px;
+}
+
+.section-title span{
+  display:inline-block;
+  color:#fff;
+  background:var(--gradient-main);
+  padding:8px 18px;
+  border-radius:40px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-size:14px;
+  box-shadow:0 10px 24px rgba(20,63,143,.18);
+}
+
+.section-title h2{
+  font-size:clamp(30px,4vw,42px);
+  color:var(--secondary);
+  margin-top:14px;
+  line-height:1.2;
+}
+
+.section-title h2::after{
+  content:"";
+  width:90px;
+  height:4px;
+  background:var(--gradient-warm);
+  display:block;
+  margin:16px auto 0;
+  border-radius:50px;
+}
+
+/* CONTACT GRID */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  gap:35px;
+  align-items:start;
+}
+
+.payment-box,
+.form-box,
+.info-card{
+  background:rgba(255,250,241,.92);
+  border:1px solid rgba(212,162,76,.28);
+  border-radius:30px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(10px);
+}
+
+.payment-box,
+.form-box{
+  padding:36px;
+  position:relative;
+  overflow:hidden;
+}
+
+.payment-box::before,
+.form-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(242,140,40,.13),rgba(15,118,110,.09),transparent 55%);
+  pointer-events:none;
+}
+
+.payment-box h3,
+.form-box h3{
+  color:var(--secondary);
+  font-size:clamp(22px,3vw,28px);
+  margin-bottom:15px;
+  position:relative;
+  z-index:1;
+}
+
+.payment-box p,
+.form-box p{
+  color:var(--muted);
+  line-height:1.8;
+  position:relative;
+  z-index:1;
+}
+
+.form-box p{
+  margin-bottom:25px;
+}
+
+/* QR + BANK */
+.qr-box{
+  margin:28px 0;
+  padding:22px;
+  border-radius:26px;
+  background:linear-gradient(135deg,var(--cream),var(--soft-green));
+  border:1px solid rgba(15,118,110,.18);
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+
+.qr-box img{
+  width:230px;
+  max-width:100%;
+  border-radius:20px;
+  background:#fff;
+  padding:10px;
+  margin:auto;
+  display:block;
+  box-shadow:0 14px 35px rgba(22,33,62,.16);
+}
+
+.qr-box h4{
+  color:var(--secondary);
+  margin-top:15px;
+}
+
+.bank-details{
+  margin-top:25px;
+  display:grid;
+  gap:14px;
+  position:relative;
+  z-index:1;
+}
+
+.bank-item{
+  padding:16px 18px;
+  border:1px solid rgba(212,162,76,.26);
+  border-radius:18px;
+  background:linear-gradient(135deg,#fffaf1,#e8eef8);
+  transition:.3s ease;
+  word-break:break-word;
+}
+
+.bank-item:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 28px rgba(22,33,62,.12);
+}
+
+.bank-item span{
+  display:block;
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:4px;
+}
+
+.bank-item b{
+  color:var(--secondary);
+  font-size:16px;
+}
+
+/* FORM */
+.form-group{
+  margin-bottom:18px;
+  position:relative;
+  z-index:1;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:8px;
+  color:var(--secondary);
+  font-weight:700;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+  width:100%;
+  padding:15px 16px;
+  border:1px solid rgba(212,162,76,.35);
+  border-radius:16px;
+  outline:none;
+  font-family:"Poppins",sans-serif;
+  font-size:15px;
+  background:#fffaf1;
+  color:var(--text);
+  transition:.3s ease;
+}
+
+.form-group textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+  border-color:var(--primary);
+  background:#fff;
+  box-shadow:0 0 0 4px rgba(20,63,143,.10);
+}
+
+.submit-btn{
+  width:100%;
+  border:0;
+  background:var(--gradient-main);
+  color:#fff;
+  padding:16px 24px;
+  border-radius:16px;
+  font-size:16px;
+  font-weight:900;
+  cursor:pointer;
+  transition:.3s ease;
+  position:relative;
+  z-index:1;
+}
+
+.submit-btn:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-hover);
+}
+
+/* INFO */
+.contact-info{
+  padding:0 0 90px;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.info-card{
+  padding:30px;
+  text-align:center;
+  transition:.35s ease;
+}
+
+.info-card:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-hover);
+}
+
+.info-icon{
+  width:66px;
+  height:66px;
+  margin:0 auto 18px;
+  border-radius:20px;
+  background:var(--gradient-warm);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  box-shadow:0 12px 30px rgba(122,31,43,.22);
+}
+
+.info-card h3{
+  color:var(--secondary);
+  margin-bottom:8px;
+}
+
+.info-card p,
+.info-card a{
+  color:var(--muted);
+  text-decoration:none;
+  word-break:break-word;
+}
+
+/* FOOTER */
+.footer{
+  background:var(--gradient-main);
+  padding:35px 20px;
+  text-align:center;
+}
+
+.footer p{
+  color:#fff7e8;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .contact-grid,
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-section{
+    padding:75px 0;
+  }
+
+  .contact-info{
+    padding-bottom:75px;
+  }
+}
+
+@media(max-width:600px){
+  .container{
+    padding:0 15px;
+  }
+
+  .contact-hero{
+    min-height:auto;
+    padding:80px 15px;
+  }
+
+  .contact-hero span,
+  .section-title span{
+    font-size:12px;
+    padding:8px 16px;
+  }
+
+  .contact-section{
+    padding:60px 0;
+  }
+
+  .section-title{
+    margin-bottom:35px;
+  }
+
+  .payment-box,
+  .form-box,
+  .info-card{
+    border-radius:22px;
+  }
+
+  .payment-box,
+  .form-box{
+    padding:25px 20px;
+  }
+
+  .qr-box{
+    padding:18px;
+    border-radius:20px;
+  }
+
+  .qr-box img{
+    width:190px;
+  }
+
+  .bank-item{
+    padding:14px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select{
+    padding:14px;
+    font-size:14px;
+    border-radius:13px;
+  }
+
+  .info-card{
+    padding:24px 18px;
+  }
+
+  .info-icon{
+    width:58px;
+    height:58px;
+    font-size:26px;
+    border-radius:17px;
+  }
+}
+
+@media(max-width:380px){
+  .container{
+    padding:0 12px;
+  }
+
+  .contact-hero{
+    padding:70px 12px;
+  }
+
+  .payment-box,
+  .form-box{
+    padding:22px 16px;
+  }
+
+  .qr-box img{
+    width:165px;
+  }
+
+  .submit-btn{
+    padding:14px 18px;
+    font-size:14px;
+  }
+
+  .footer{
+    padding:28px 12px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div id="header"></div>
+
+<!-- <section class="contact-hero">
+    <div class="container">
+        <span>ਸੰਪਰਕ ਅਤੇ ਦਾਨ</span>
+        <h1>ਸਾਡੇ ਨਾਲ <b>ਸੰਪਰਕ ਕਰੋ</b></h1>
+        <p>
+            ਪੁੱਛਗਿੱਛ, ਵਾਲੰਟੀਅਰਿੰਗ, ਸਹਿਯੋਗ, ਦਾਨ ਜਾਂ ਸਹਾਇਤਾ ਲਈ ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।
+            ਤੁਹਾਡਾ ਯੋਗਦਾਨ ਅਰਥਪੂਰਨ ਬਦਲਾਅ ਲਿਆਉਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ।
+        </p>
+    </div>
+</section> -->
+
+<section class="contact-section">
+    <div class="container">
+
+        <div class="section-title">
+            <span>ਸਾਡੇ ਉਦੇਸ਼ ਦਾ ਸਹਿਯੋਗ ਕਰੋ</span>
+            <h2>ਦਾਨ ਅਤੇ ਪੁੱਛਗਿੱਛ ਵੇਰਵੇ</h2>
+        </div>
+
+        <section class="contact-info">
+            <div class="container">
+                <div class="info-grid">
+
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3>ਪਤਾ</h3>
+                        <p>ਗ੍ਰੇਟਰ ਨੋਇਡਾ, ਉੱਤਰ ਪ੍ਰਦੇਸ਼, ਭਾਰਤ</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <h3>ਫੋਨ</h3>
+                        <p><a href="tel:+919501245121">+91 9501245121</a></p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">✉️</div>
+                        <h3>ਈਮੇਲ</h3>
+                        <p><a href="mailto:Singh947@gmail.com">Singh947@gmail.com</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="contact-grid">
+
+            <div class="payment-box">
+                <h3>ਭੁਗਤਾਨ ਵੇਰਵੇ</h3>
+                <p>
+                    ਤੁਸੀਂ QR ਕੋਡ ਸਕੈਨ ਕਰਕੇ ਜਾਂ ਹੇਠਾਂ ਦਿੱਤੇ ਬੈਂਕ ਖਾਤੇ ਦੇ ਵੇਰਵਿਆਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ
+                    ਸਾਡੀ NGO ਦਾ ਸਹਿਯੋਗ ਕਰ ਸਕਦੇ ਹੋ।
+                </p>
+
+                <div class="qr-box">
+                    <img src="images/qr-code.png" alt="ਦਾਨ QR ਕੋਡ">
+                    <h4>ਦਾਨ ਕਰਨ ਲਈ QR ਕੋਡ ਸਕੈਨ ਕਰੋ</h4>
+                </div>
+
+                <div class="bank-details">
+                    <div class="bank-item">
+                        <span>ਖਾਤਾ ਨਾਮ</span>
+                        <b>NGO Name Foundation</b>
+                    </div>
+
+                    <div class="bank-item">
+                        <span>ਖਾਤਾ ਨੰਬਰ</span>
+                        <b>XXXXXXXXXXXX</b>
+                    </div>
+
+                    <div class="bank-item">
+                        <span>IFSC ਕੋਡ</span>
+                        <b>XXXX0000000</b>
+                    </div>
+
+                    <div class="bank-item">
+                        <span>ਬੈਂਕ ਨਾਮ</span>
+                        <b>Your Bank Name</b>
+                    </div>
+
+                    <div class="bank-item">
+                        <span>UPI ID</span>
+                        <b>ngoname@upi</b>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-box">
+                <h3>ਪੁੱਛਗਿੱਛ ਭੇਜੋ</h3>
+                <p>
+                    ਹੇਠਾਂ ਦਿੱਤਾ ਫਾਰਮ ਭਰੋ ਅਤੇ ਸਾਡੀ ਟੀਮ ਜਲਦੀ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੇਗੀ।
+                </p>
+
+                <form id="enquiryForm">
+                    <div class="form-group">
+                        <label>ਪੂਰਾ ਨਾਮ</label>
+                        <input type="text" name="name" placeholder="ਆਪਣਾ ਨਾਮ ਦਰਜ ਕਰੋ" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>ਈਮੇਲ ਪਤਾ</label>
+                        <input type="email" name="email" placeholder="ਆਪਣੀ ਈਮੇਲ ਦਰਜ ਕਰੋ" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>ਫੋਨ ਨੰਬਰ</label>
+                        <input type="tel" name="phone" placeholder="ਆਪਣਾ ਫੋਨ ਨੰਬਰ ਦਰਜ ਕਰੋ" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>ਪੁੱਛਗਿੱਛ ਕਿਸਮ</label>
+                        <select name="type" required>
+                            <option value="">ਪੁੱਛਗਿੱਛ ਦੀ ਕਿਸਮ ਚੁਣੋ</option>
+                            <option>ਦਾਨ</option>
+                            <option>ਵਾਲੰਟੀਅਰਿੰਗ</option>
+                            <option>ਭਾਗੀਦਾਰੀ</option>
+                            <option>ਆਮ ਪੁੱਛਗਿੱਛ</option>
+                            <option>ਸਹਾਇਤਾ ਬੇਨਤੀ</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>ਸੁਨੇਹਾ</label>
+                        <textarea name="message" placeholder="ਆਪਣਾ ਸੁਨੇਹਾ ਲਿਖੋ..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">ਪੁੱਛਗਿੱਛ ਜਮ੍ਹਾਂ ਕਰੋ</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div id="footer"></div>
+
+<script>
+ fetch("header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
+    const menuBtn = document.querySelector(".menu-btn");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (menuBtn && navLinks) {
+      menuBtn.onclick = () => {
+        navLinks.classList.toggle("show");
+      };
+    }
+
+    loadGoogleTranslate();
+  });
+
+
+function googleTranslateElementInit() {
+  const translateBox = document.getElementById("google_translate_element");
+
+  if (translateBox && translateBox.innerHTML.trim() === "") {
+
+    new google.translate.TranslateElement({
+      pageLanguage: "pa", // Punjabi is original language
+      includedLanguages: "en,hi,ur,pa,bn,ta,te,mr,gu,kn,ml,ne",
+      autoDisplay: false,
+      multilanguagePage: true,
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, "google_translate_element");
+
+  }
+}
+
+function loadGoogleTranslate() {
+
+  // Prevent duplicate script loading
+  if (document.getElementById("googleTranslateScript")) {
+    if (typeof google !== "undefined" && google.translate) {
+      googleTranslateElementInit();
+    }
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.id = "googleTranslateScript";
+  script.src =
+    "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+
+  document.body.appendChild(script);
+}
+
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+
+  fetch("floating.html")
+    .then(res => res.text())
+    .then(data => {
+      document.body.insertAdjacentHTML("beforeend", data);
+    });
+
+
+
+  document.getElementById("enquiryForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = this.name.value.trim();
+    const email = this.email.value.trim();
+    const phone = this.phone.value.trim();
+    const type = this.type.value.trim();
+    const message = this.message.value.trim();
+
+    const whatsappNumber = "919501245121";
+
+    const whatsappMessage =
+`ਸਤ ਸ੍ਰੀ ਅਕਾਲ ਜੀ,
+
+ਨਵੀਂ ਪੁੱਛਗਿੱਛ ਪ੍ਰਾਪਤ ਹੋਈ ਹੈ:
+
+ਨਾਮ: ${name}
+ਈਮੇਲ: ${email}
+ਫੋਨ ਨੰਬਰ: ${phone}
+ਪੁੱਛਗਿੱਛ ਕਿਸਮ: ${type}
+ਸੁਨੇਹਾ: ${message}`;
+
+    const whatsappURL = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
+
+    this.reset();
+  });
+</script>
+</body>
+</html>
