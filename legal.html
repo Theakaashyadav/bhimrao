@@ -15,26 +15,44 @@
 }
 
 :root{
-  --primary:#1f7a4d;
-  --secondary:#0f2f44;
-  --accent:#f6b43b;
-  --light:#f7fbf8;
+  --primary:#547A95;
+  --primary-dark:#1b2732;
+  --secondary:#2C3947;
+  --accent:#C2A56D;
+  --accent-dark:#9e814d;
+
+  --light:#E8EDF2;
   --white:#ffffff;
-  --text:#333333;
-  --muted:#6b7280;
-  --border:#e5e7eb;
-  --soft-green:#eaf7ef;
-  --shadow:0 18px 45px rgba(15,47,68,.12);
-  --shadow-hover:0 25px 60px rgba(15,47,68,.18);
-  --gradient-main:linear-gradient(135deg,#1f7a4d,#0f2f44);
+  --card:#ffffff;
+  --text:#1b2732;
+  --muted:#64717f;
+
+  --section-soft:#dce4eb;
+  --section-blue:#2C3947;
+  --section-dark:#1b2732;
+  --section-gold:#f4ead6;
+
+  --border:rgba(194,165,109,.35);
+  --shadow:0 18px 45px rgba(27,39,50,.16);
+  --shadow-hover:0 28px 70px rgba(27,39,50,.26);
+
+  --gradient-main:linear-gradient(135deg,#1b2732,#2C3947,#547A95);
+  --gradient-gold:linear-gradient(135deg,#e3cf9d,#C2A56D,#9e814d);
+  --gradient-soft:linear-gradient(135deg,#dce4eb,#E8EDF2,#f4ead6);
+}
+
+html,
+body{
+  width:100%;
+  min-height:100%;
+  background:var(--gradient-soft);
+  overflow-x:hidden;
 }
 
 body{
   font-family:"Poppins",sans-serif;
-  background:var(--light);
   color:var(--text);
   line-height:1.7;
-  overflow-x:hidden;
 }
 
 body.modal-open{
@@ -57,7 +75,7 @@ body.modal-open{
   text-align:center;
   padding:90px 20px;
   background:
-    linear-gradient(rgba(15,47,68,.82),rgba(31,122,77,.75)),
+    linear-gradient(115deg,rgba(27,39,50,.95),rgba(44,57,71,.84),rgba(84,122,149,.76)),
     url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1600&auto=format&fit=crop")
     center/cover no-repeat;
 }
@@ -66,14 +84,16 @@ body.modal-open{
   display:inline-block;
   padding:10px 22px;
   border-radius:50px;
-  background:rgba(255,255,255,.15);
-  color:#fff;
+  background:rgba(255,255,255,.12);
+  border:1px solid var(--border);
+  color:#f4e1ad;
   margin-bottom:20px;
-  font-weight:600;
+  font-weight:800;
+  backdrop-filter:blur(10px);
 }
 
 .legal-hero h1{
-  font-size:clamp(34px,6vw,56px);
+  font-size:clamp(30px,6vw,56px);
   color:#fff;
   line-height:1.15;
 }
@@ -85,13 +105,14 @@ body.modal-open{
 .legal-hero p{
   max-width:760px;
   margin:22px auto 0;
-  color:#edf7f0;
-  font-size:clamp(15px,2vw,18px);
+  color:#edf3f7;
+  font-size:clamp(14px,2vw,18px);
 }
 
 /* DOCUMENTS */
 .documents-section{
   padding:90px 0;
+  background:transparent !important;
 }
 
 .section-title{
@@ -100,18 +121,34 @@ body.modal-open{
 }
 
 .section-title span{
-  color:var(--primary);
-  font-weight:700;
+  display:inline-block;
+  color:var(--primary-dark);
+  background:var(--gradient-gold);
+  border:1px solid var(--border);
+  padding:8px 18px;
+  border-radius:40px;
+  font-weight:900;
   text-transform:uppercase;
   letter-spacing:1px;
   font-size:14px;
+  box-shadow:0 10px 24px rgba(194,165,109,.25);
 }
 
 .section-title h2{
-  font-size:clamp(30px,4vw,42px);
+  font-size:clamp(28px,4vw,42px);
   color:var(--secondary);
   margin-top:10px;
   line-height:1.2;
+}
+
+.section-title h2::after{
+  content:"";
+  width:90px;
+  height:4px;
+  background:var(--gradient-gold);
+  display:block;
+  margin:16px auto 0;
+  border-radius:50px;
 }
 
 .documents-grid{
@@ -121,7 +158,7 @@ body.modal-open{
 }
 
 .document-card{
-  background:var(--white);
+  background:rgba(255,255,255,.78);
   border:1px solid var(--border);
   border-radius:28px;
   padding:35px;
@@ -129,6 +166,7 @@ body.modal-open{
   transition:.4s ease;
   position:relative;
   overflow:hidden;
+  backdrop-filter:blur(12px);
 }
 
 .document-card::before{
@@ -136,7 +174,7 @@ body.modal-open{
   position:absolute;
   width:130px;
   height:130px;
-  background:var(--soft-green);
+  background:radial-gradient(circle,rgba(194,165,109,.26),transparent 70%);
   border-radius:50%;
   top:-45px;
   right:-45px;
@@ -167,6 +205,7 @@ body.modal-open{
   color:#fff;
   font-size:32px;
   margin-bottom:25px;
+  box-shadow:0 12px 30px rgba(27,39,50,.22);
 }
 
 .document-card h3{
@@ -200,13 +239,14 @@ body.modal-open{
   padding:14px 20px;
   border-radius:14px;
   font-size:15px;
-  font-weight:700;
+  font-weight:800;
   cursor:pointer;
   transition:.3s ease;
 }
 
 .view-btn:hover{
   transform:translateY(-3px);
+  box-shadow:var(--shadow);
 }
 
 /* MODAL */
@@ -216,7 +256,7 @@ body.modal-open{
   width:100%;
   height:100vh;
   height:100dvh;
-  background:rgba(0,0,0,.82);
+  background:rgba(27,39,50,.88);
   z-index:99999;
   display:none;
   padding:12px;
@@ -243,7 +283,7 @@ body.modal-open{
 
 .modal-header{
   min-height:60px;
-  background:var(--secondary);
+  background:var(--gradient-main);
   color:#fff;
   display:flex;
   align-items:center;
@@ -294,16 +334,17 @@ body.modal-open{
 
 /* FOOTER */
 .footer{
-  background:var(--secondary);
+  background:var(--gradient-main);
   padding:35px 20px;
   text-align:center;
 }
 
 .footer p{
-  color:#d7e7df;
+  color:#edf3f7;
 }
 
 /* RESPONSIVE */
+
 @media(max-width:1000px){
   .documents-grid{
     grid-template-columns:repeat(2,1fr);
@@ -314,14 +355,14 @@ body.modal-open{
   }
 }
 
-@media(max-width:650px){
+@media(max-width:768px){
   .container{
-    padding:0 15px;
+    padding:0 14px;
   }
 
   .legal-hero{
     min-height:auto;
-    padding:75px 15px;
+    padding:75px 14px;
   }
 
   .documents-section{
@@ -332,14 +373,23 @@ body.modal-open{
     margin-bottom:35px;
   }
 
+  .section-title span{
+    font-size:12px;
+    padding:7px 14px;
+  }
+
+  .section-title h2{
+    font-size:26px;
+  }
+
   .documents-grid{
-    grid-template-columns:1fr;
-    gap:22px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
   }
 
   .document-card{
-    padding:26px 20px;
-    border-radius:22px;
+    padding:18px 10px;
+    border-radius:20px;
   }
 
   .document-card:hover{
@@ -347,14 +397,34 @@ body.modal-open{
   }
 
   .doc-icon{
-    width:60px;
-    height:60px;
-    font-size:27px;
-    border-radius:17px;
+    width:52px;
+    height:52px;
+    font-size:24px;
+    border-radius:15px;
+    margin-bottom:14px;
   }
 
   .document-card h3{
-    font-size:20px;
+    font-size:14px;
+    line-height:1.3;
+  }
+
+  .document-card p{
+    font-size:12px;
+    line-height:1.5;
+    margin-bottom:14px;
+  }
+
+  .doc-meta{
+    font-size:11px;
+    gap:6px;
+    margin-bottom:14px;
+  }
+
+  .view-btn{
+    padding:10px 12px;
+    font-size:12px;
+    border-radius:12px;
   }
 
   .document-modal{
@@ -395,23 +465,91 @@ body.modal-open{
   }
 }
 
-@media(max-width:380px){
+@media(max-width:480px){
+  .container{
+    padding:0 10px;
+  }
+
+  .legal-hero{
+    padding:65px 10px;
+  }
+
+  .legal-hero h1{
+    font-size:30px;
+  }
+
+  .legal-hero p{
+    font-size:13px;
+    line-height:1.6;
+  }
+
+  .documents-section{
+    padding:50px 0;
+  }
+
+  .documents-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px;
+  }
+
   .document-card{
-    padding:22px 16px;
+    padding:14px 7px;
+    border-radius:16px;
+  }
+
+  .doc-icon{
+    width:45px;
+    height:45px;
+    font-size:20px;
+    border-radius:13px;
+    margin-bottom:10px;
+  }
+
+  .document-card h3{
+    font-size:12.5px;
+    margin-bottom:7px;
+  }
+
+  .document-card p{
+    font-size:10.5px;
+    line-height:1.45;
   }
 
   .doc-meta{
     flex-direction:column;
-    gap:5px;
+    gap:4px;
+    font-size:10px;
   }
 
   .view-btn{
-    padding:13px 16px;
-    font-size:14px;
+    padding:8px 7px;
+    font-size:10.5px;
   }
 
   .modal-header h3{
     font-size:13px;
+  }
+}
+
+@media(max-width:360px){
+  .documents-grid{
+    gap:7px;
+  }
+
+  .document-card{
+    padding:12px 6px;
+  }
+
+  .document-card h3{
+    font-size:11.5px;
+  }
+
+  .document-card p{
+    font-size:10px;
+  }
+
+  .view-btn{
+    font-size:10px;
   }
 }
 </style>
@@ -419,13 +557,14 @@ body.modal-open{
 
 <body>
 <div id="header"></div>
+
 <!-- <section class="legal-hero">
     <div class="container">
-        <span>Legal & Transparency</span>
-        <h1>NGO Legal <b>Documents</b></h1>
+        <span>ਕਾਨੂੰਨੀ ਅਤੇ ਪਾਰਦਰਸ਼ਤਾ</span>
+        <h1>ਐਨਜੀਓ ਦੇ ਕਾਨੂੰਨੀ <b>ਦਸਤਾਵੇਜ਼</b></h1>
         <p>
-            View our official registration, certifications, approvals,
-            and transparency documents securely in view-only mode.
+            ਸਾਡੇ ਅਧਿਕਾਰਕ ਰਜਿਸਟ੍ਰੇਸ਼ਨ, ਸਰਟੀਫਿਕੇਟ, ਮਨਜ਼ੂਰੀਆਂ
+            ਅਤੇ ਪਾਰਦਰਸ਼ਤਾ ਦਸਤਾਵੇਜ਼ਾਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਢੰਗ ਨਾਲ ਸਿਰਫ਼ ਵੇਖਣ ਲਈ ਦੇਖੋ।
         </p>
     </div>
 </section> -->
@@ -434,87 +573,87 @@ body.modal-open{
     <div class="container">
 
         <div class="section-title">
-            <span>Official Records</span>
-            <h2>Legal Documents</h2>
+            <span>ਅਧਿਕਾਰਕ ਰਿਕਾਰਡ</span>
+            <h2>ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼</h2>
         </div>
 
         <div class="documents-grid">
 
             <div class="document-card">
                 <div class="doc-icon">📄</div>
-                <h3>NGO Registration Certificate</h3>
-                <p>Official government registration certificate of the organization.</p>
+                <h3>ਐਨਜੀਓ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਸਰਟੀਫਿਕੇਟ</h3>
+                <p>ਸੰਸਥਾ ਦਾ ਅਧਿਕਾਰਕ ਸਰਕਾਰੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਸਰਟੀਫਿਕੇਟ।</p>
                 <div class="doc-meta">
                     <span>PDF</span>
-                    <span>View Only</span>
+                    <span>ਸਿਰਫ਼ ਵੇਖਣ ਲਈ</span>
                 </div>
-                <button class="view-btn" onclick="openDocument('NGO Registration Certificate','images/documents/reg.pdf')">
-                    View Document
+                <button class="view-btn" onclick="openDocument('ਐਨਜੀਓ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਸਰਟੀਫਿਕੇਟ','images/documents/reg.pdf')">
+                    ਦਸਤਾਵੇਜ਼ ਵੇਖੋ
                 </button>
             </div>
 
             <!-- <div class="document-card">
                 <div class="doc-icon">✅</div>
-                <h3>80G Certificate</h3>
-                <p>Tax exemption certificate for eligible donations under 80G.</p>
+                <h3>80G ਸਰਟੀਫਿਕੇਟ</h3>
+                <p>80G ਅਧੀਨ ਯੋਗ ਦਾਨ ਲਈ ਟੈਕਸ ਛੂਟ ਸਰਟੀਫਿਕੇਟ।</p>
                 <div class="doc-meta">
                     <span>PDF</span>
-                    <span>View Only</span>
+                    <span>ਸਿਰਫ਼ ਵੇਖਣ ਲਈ</span>
                 </div>
-                <button class="view-btn" onclick="openDocument('80G Certificate','documents/80g-certificate.pdf')">
-                    View Document
+                <button class="view-btn" onclick="openDocument('80G ਸਰਟੀਫਿਕੇਟ','documents/80g-certificate.pdf')">
+                    ਦਸਤਾਵੇਜ਼ ਵੇਖੋ
                 </button>
             </div>
 
             <div class="document-card">
                 <div class="doc-icon">🛡️</div>
-                <h3>12A Certificate</h3>
-                <p>Income tax exemption registration certificate for the NGO.</p>
+                <h3>12A ਸਰਟੀਫਿਕੇਟ</h3>
+                <p>ਐਨਜੀਓ ਲਈ ਆਮਦਨ ਕਰ ਛੂਟ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਸਰਟੀਫਿਕੇਟ।</p>
                 <div class="doc-meta">
                     <span>PDF</span>
-                    <span>View Only</span>
+                    <span>ਸਿਰਫ਼ ਵੇਖਣ ਲਈ</span>
                 </div>
-                <button class="view-btn" onclick="openDocument('12A Certificate','documents/12a-certificate.pdf')">
-                    View Document
+                <button class="view-btn" onclick="openDocument('12A ਸਰਟੀਫਿਕੇਟ','documents/12a-certificate.pdf')">
+                    ਦਸਤਾਵੇਜ਼ ਵੇਖੋ
                 </button>
             </div> -->
 
             <div class="document-card">
                 <div class="doc-icon">🏦</div>
-                <h3>PAN Card</h3>
-                <p>Permanent Account Number details of the organization.</p>
+                <h3>PAN ਕਾਰਡ</h3>
+                <p>ਸੰਸਥਾ ਦੇ ਸਥਾਈ ਖਾਤਾ ਨੰਬਰ ਦੀ ਜਾਣਕਾਰੀ।</p>
                 <div class="doc-meta">
                     <span>PDF</span>
-                    <span>View Only</span>
+                    <span>ਸਿਰਫ਼ ਵੇਖਣ ਲਈ</span>
                 </div>
-                <button class="view-btn" onclick="openDocument('PAN Card','images/documents/pan.pdf')">
-                    View Document
+                <button class="view-btn" onclick="openDocument('PAN ਕਾਰਡ','images/documents/pan.pdf')">
+                    ਦਸਤਾਵੇਜ਼ ਵੇਖੋ
                 </button>
             </div>
 
             <!-- <div class="document-card">
                 <div class="doc-icon">📑</div>
-                <h3>Audit Report</h3>
-                <p>Annual financial audit report for transparency and accountability.</p>
+                <h3>ਆਡਿਟ ਰਿਪੋਰਟ</h3>
+                <p>ਪਾਰਦਰਸ਼ਤਾ ਅਤੇ ਜਵਾਬਦੇਹੀ ਲਈ ਸਾਲਾਨਾ ਵਿੱਤੀ ਆਡਿਟ ਰਿਪੋਰਟ।</p>
                 <div class="doc-meta">
                     <span>PDF</span>
-                    <span>View Only</span>
+                    <span>ਸਿਰਫ਼ ਵੇਖਣ ਲਈ</span>
                 </div>
-                <button class="view-btn" onclick="openDocument('Audit Report','documents/audit-report.pdf')">
-                    View Document
+                <button class="view-btn" onclick="openDocument('ਆਡਿਟ ਰਿਪੋਰਟ','documents/audit-report.pdf')">
+                    ਦਸਤਾਵੇਜ਼ ਵੇਖੋ
                 </button>
             </div>
 
             <div class="document-card">
                 <div class="doc-icon">🤝</div>
-                <h3>Trust Deed / MoA</h3>
-                <p>Foundation document containing objectives and legal structure.</p>
+                <h3>ਟਰੱਸਟ ਡੀਡ / MoA</h3>
+                <p>ਉਦੇਸ਼ਾਂ ਅਤੇ ਕਾਨੂੰਨੀ ਢਾਂਚੇ ਵਾਲਾ ਸੰਸਥਾ ਦਾ ਬੁਨਿਆਦੀ ਦਸਤਾਵੇਜ਼।</p>
                 <div class="doc-meta">
                     <span>PDF</span>
-                    <span>View Only</span>
+                    <span>ਸਿਰਫ਼ ਵੇਖਣ ਲਈ</span>
                 </div>
-                <button class="view-btn" onclick="openDocument('Trust Deed / MoA','documents/trust-deed.pdf')">
-                    View Document
+                <button class="view-btn" onclick="openDocument('ਟਰੱਸਟ ਡੀਡ / MoA','documents/trust-deed.pdf')">
+                    ਦਸਤਾਵੇਜ਼ ਵੇਖੋ
                 </button>
             </div> -->
 
@@ -525,20 +664,21 @@ body.modal-open{
 <div class="document-modal" id="documentModal">
     <div class="modal-box">
         <div class="modal-header">
-            <h3 id="modalTitle">Document Viewer</h3>
+            <h3 id="modalTitle">ਦਸਤਾਵੇਜ਼ ਦਰਸ਼ਕ</h3>
             <button class="close-btn" onclick="closeDocument()">×</button>
         </div>
 
         <iframe id="pdfViewer" class="pdf-viewer"></iframe>
 
         <div class="pdf-error" id="pdfError">
-            PDF not found. Please check your file path.
+            PDF ਨਹੀਂ ਮਿਲੀ। ਕਿਰਪਾ ਕਰਕੇ ਆਪਣਾ ਫਾਇਲ ਪਾਥ ਚੈੱਕ ਕਰੋ।
         </div>
     </div>
 </div>
 
 <div id="contact-form"></div>
 <div id="footer"></div>
+
 <script>
     fetch("header.html")
   .then(res => res.text())
