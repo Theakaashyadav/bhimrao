@@ -15,26 +15,43 @@
 }
 
 :root{
-  --primary:#1f7a4d;
-  --secondary:#0f2f44;
-  --accent:#f6b43b;
-  --light:#f7fbf8;
+  --primary:#547A95;
+  --primary-dark:#1b2732;
+  --secondary:#2C3947;
+  --accent:#C2A56D;
+  --accent-dark:#9e814d;
+
+  --light:#E8EDF2;
   --white:#ffffff;
-  --text:#333333;
-  --muted:#6b7280;
-  --border:#e5e7eb;
-  --soft-green:#eaf7ef;
-  --cream:#fff8ea;
-  --shadow:0 18px 45px rgba(15,47,68,.12);
-  --shadow-hover:0 25px 60px rgba(15,47,68,.18);
-  --gradient-main:linear-gradient(135deg,#1f7a4d,#0f2f44);
+  --card:#ffffff;
+  --text:#1b2732;
+  --muted:#64717f;
+
+  --section-soft:#dce4eb;
+  --section-blue:#2C3947;
+  --section-dark:#1b2732;
+  --section-gold:#f4ead6;
+
+  --border:rgba(194,165,109,.35);
+  --shadow:0 18px 45px rgba(27,39,50,.16);
+  --shadow-hover:0 28px 70px rgba(27,39,50,.26);
+
+  --gradient-main:linear-gradient(135deg,#1b2732,#2C3947,#547A95);
+  --gradient-gold:linear-gradient(135deg,#e3cf9d,#C2A56D,#9e814d);
+  --gradient-soft:linear-gradient(135deg,#dce4eb,#E8EDF2,#f4ead6);
+}
+
+html,
+body{
+  width:100%;
+  min-height:100%;
+  background:var(--gradient-soft);
+  overflow-x:hidden;
 }
 
 body{
   font-family:"Poppins",sans-serif;
-  background:var(--light);
   color:var(--text);
-  overflow-x:hidden;
 }
 
 .container{
@@ -52,7 +69,7 @@ body{
   text-align:center;
   padding:100px 20px;
   background:
-    linear-gradient(rgba(15,47,68,.82),rgba(31,122,77,.75)),
+    linear-gradient(115deg,rgba(27,39,50,.95),rgba(44,57,71,.84),rgba(84,122,149,.76)),
     url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600&auto=format&fit=crop")
     center/cover no-repeat;
 }
@@ -61,14 +78,16 @@ body{
   display:inline-block;
   padding:10px 22px;
   border-radius:50px;
-  background:rgba(255,255,255,.15);
-  color:#fff;
+  background:rgba(255,255,255,.12);
+  border:1px solid var(--border);
+  color:#f4e1ad;
   margin-bottom:20px;
-  font-weight:600;
+  font-weight:800;
+  backdrop-filter:blur(10px);
 }
 
 .program-hero h1{
-  font-size:clamp(34px,6vw,58px);
+  font-size:clamp(32px,6vw,58px);
   color:#fff;
   line-height:1.15;
 }
@@ -80,18 +99,19 @@ body{
 .program-hero p{
   max-width:780px;
   margin:22px auto 0;
-  color:#edf7f0;
-  font-size:clamp(15px,2vw,18px);
+  color:#edf3f7;
+  font-size:clamp(14px,2vw,18px);
   line-height:1.8;
 }
 
 /* COMMON */
 .program-section{
   padding:90px 0;
+  background:transparent !important;
 }
 
 .light-bg{
-  background:var(--white);
+  background:transparent !important;
 }
 
 .section-title{
@@ -100,18 +120,34 @@ body{
 }
 
 .section-title span{
-  color:var(--primary);
-  font-weight:700;
+  display:inline-block;
+  color:var(--primary-dark);
+  background:var(--gradient-gold);
+  border:1px solid var(--border);
+  padding:8px 18px;
+  border-radius:40px;
+  font-weight:900;
   text-transform:uppercase;
   letter-spacing:1px;
   font-size:14px;
+  box-shadow:0 10px 24px rgba(194,165,109,.25);
 }
 
 .section-title h2{
-  font-size:clamp(30px,4vw,42px);
+  font-size:clamp(28px,4vw,42px);
   color:var(--secondary);
   margin-top:10px;
   line-height:1.2;
+}
+
+.section-title h2::after{
+  content:"";
+  width:90px;
+  height:4px;
+  background:var(--gradient-gold);
+  display:block;
+  margin:16px auto 0;
+  border-radius:50px;
 }
 
 .section-title p{
@@ -129,13 +165,14 @@ body{
 }
 
 .program-card{
-  background:var(--white);
+  background:rgba(255,255,255,.78);
   border:1px solid var(--border);
   border-radius:28px;
   overflow:hidden;
   box-shadow:var(--shadow);
   transition:.4s ease;
   position:relative;
+  backdrop-filter:blur(12px);
 }
 
 .program-card:hover{
@@ -166,13 +203,14 @@ body{
 
 .program-tag{
   display:inline-block;
-  background:var(--soft-green);
-  color:var(--primary);
+  background:var(--gradient-gold);
+  color:var(--primary-dark);
   padding:7px 16px;
   border-radius:30px;
   font-size:13px;
-  font-weight:700;
+  font-weight:900;
   margin-bottom:14px;
+  box-shadow:0 8px 20px rgba(194,165,109,.20);
 }
 
 .program-content h3{
@@ -211,17 +249,19 @@ body{
   position:absolute;
   top:18px;
   right:18px;
-  background:var(--accent);
-  color:var(--secondary);
+  background:var(--gradient-main);
+  color:#fff;
   padding:8px 15px;
   border-radius:30px;
   font-size:13px;
-  font-weight:800;
+  font-weight:900;
+  box-shadow:0 10px 24px rgba(27,39,50,.20);
 }
 
 .past-card .program-tag{
-  background:var(--cream);
-  color:#b77905;
+  background:linear-gradient(135deg,#ffffff,var(--section-gold));
+  color:var(--accent-dark);
+  border:1px solid var(--border);
 }
 
 /* IMPACT */
@@ -233,7 +273,8 @@ body{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:25px;
-  box-shadow:var(--shadow);
+  box-shadow:var(--shadow-hover);
+  border:1px solid rgba(194,165,109,.32);
 }
 
 .impact-box{
@@ -242,22 +283,22 @@ body{
 }
 
 .impact-box h3{
-  font-size:clamp(30px,4vw,38px);
+  font-size:clamp(28px,4vw,38px);
   color:var(--accent);
   margin-bottom:5px;
 }
 
 .impact-box p{
-  color:#e8f5ee;
+  color:#edf3f7;
 }
 
 /* CONTACT HOLDER */
 #contact-form{
-  background:var(--white);
+  background:transparent !important;
 }
 
 /* RESPONSIVE */
-@media(max-width:1000px){
+@media(max-width:1100px){
   .program-grid{
     grid-template-columns:repeat(2,1fr);
   }
@@ -265,95 +306,192 @@ body{
   .impact-strip{
     grid-template-columns:repeat(2,1fr);
   }
-
-  .program-section{
-    padding:75px 0;
-  }
 }
 
-@media(max-width:650px){
+@media(max-width:768px){
   .container{
-    padding:0 15px;
+    padding:0 14px;
   }
 
   .program-hero{
     min-height:auto;
-    padding:75px 15px;
+    padding:80px 14px;
   }
 
   .program-section{
-    padding:60px 0;
+    padding:65px 0;
   }
 
   .section-title{
-    margin-bottom:35px;
+    margin-bottom:38px;
   }
 
   .section-title span{
     font-size:12px;
+    padding:7px 14px;
+  }
+
+  .section-title h2{
+    font-size:26px;
+  }
+
+  .section-title p{
+    font-size:14px;
+    line-height:1.6;
   }
 
   .program-grid{
-    grid-template-columns:1fr;
-    gap:22px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
   }
 
   .program-card{
-    border-radius:22px;
+    border-radius:20px;
   }
 
   .program-img{
-    height:220px;
+    height:155px;
   }
 
   .program-content{
-    padding:24px 20px;
-  }
-
-  .program-content h3{
-    font-size:20px;
-  }
-
-  .future-card::after{
-    top:14px;
-    right:14px;
-    font-size:12px;
-    padding:7px 13px;
-  }
-
-  .impact-strip{
-    grid-template-columns:1fr;
-    margin-top:45px;
-    padding:32px 22px;
-    border-radius:24px;
-    gap:22px;
-  }
-}
-
-@media(max-width:380px){
-  .program-hero{
-    padding:65px 12px;
-  }
-
-  .container{
-    padding:0 12px;
-  }
-
-  .program-img{
-    height:195px;
-  }
-
-  .program-content{
-    padding:22px 16px;
+    padding:14px 10px;
   }
 
   .program-tag{
+    font-size:11px;
+    padding:6px 10px;
+    margin-bottom:10px;
+  }
+
+  .program-content h3{
+    font-size:14px;
+    line-height:1.3;
+    margin-bottom:8px;
+  }
+
+  .program-content p{
     font-size:12px;
-    padding:6px 13px;
+    line-height:1.5;
+    margin-bottom:12px;
+  }
+
+  .program-info{
+    gap:6px;
+    padding-top:10px;
+  }
+
+  .program-info span{
+    font-size:11px;
+    line-height:1.4;
+  }
+
+  .future-card::after{
+    top:10px;
+    right:10px;
+    font-size:10px;
+    padding:6px 10px;
   }
 
   .impact-strip{
-    padding:28px 18px;
+    grid-template-columns:repeat(2,1fr);
+    margin-top:45px;
+    padding:24px 14px;
+    border-radius:22px;
+    gap:16px;
+  }
+
+  .impact-box h3{
+    font-size:25px;
+  }
+
+  .impact-box p{
+    font-size:12px;
+  }
+}
+
+@media(max-width:480px){
+  .container{
+    padding:0 10px;
+  }
+
+  .program-hero{
+    padding:70px 10px;
+  }
+
+  .program-hero h1{
+    font-size:30px;
+  }
+
+  .program-hero p{
+    font-size:13px;
+    line-height:1.6;
+  }
+
+  .program-section{
+    padding:50px 0;
+  }
+
+  .program-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px;
+  }
+
+  .program-img{
+    height:125px;
+  }
+
+  .program-content{
+    padding:12px 8px;
+  }
+
+  .program-tag{
+    font-size:10px;
+    padding:5px 8px;
+  }
+
+  .program-content h3{
+    font-size:13px;
+  }
+
+  .program-content p{
+    font-size:11px;
+  }
+
+  .future-card::after{
+    font-size:9px;
+    padding:5px 8px;
+  }
+
+  .impact-strip{
+    padding:20px 10px;
+    gap:12px;
+  }
+}
+
+@media(max-width:360px){
+  .program-grid{
+    gap:7px;
+  }
+
+  .program-img{
+    height:110px;
+  }
+
+  .program-content{
+    padding:10px 7px;
+  }
+
+  .program-content h3{
+    font-size:12px;
+  }
+
+  .program-content p,
+  .program-info span{
+    font-size:10px;
+  }
+
+  .impact-box h3{
+    font-size:22px;
   }
 }
 </style>
@@ -365,11 +503,11 @@ body{
 
 <section class="program-hero">
     <div class="container">
-        <span>Our Initiatives</span>
-        <h1>Our <b>Programs</b></h1>
+        <span>ਸਾਡੀਆਂ ਪਹਿਲਕਦਮੀਆਂ</span>
+        <h1>ਸਾਡੇ <b>ਪ੍ਰੋਗਰਾਮ</b></h1>
         <p>
-            Explore our upcoming and completed programs focused on education,
-            healthcare, women empowerment, environment, and community welfare.
+            ਸਿੱਖਿਆ, ਸਿਹਤ ਸਹਾਇਤਾ, ਮਹਿਲਾ ਸਸ਼ਕਤੀਕਰਨ, ਵਾਤਾਵਰਣ
+            ਅਤੇ ਸਮਾਜਿਕ ਭਲਾਈ ਨਾਲ ਜੁੜੇ ਸਾਡੇ ਆਉਣ ਵਾਲੇ ਅਤੇ ਪੂਰੇ ਹੋ ਚੁੱਕੇ ਪ੍ਰੋਗਰਾਮ ਵੇਖੋ।
         </p>
     </div>
 </section>
@@ -378,11 +516,11 @@ body{
     <div class="container">
 
         <div class="section-title">
-            <span>Upcoming Work</span>
-            <h2>Future Programs</h2>
+            <span>ਆਉਣ ਵਾਲੇ ਕੰਮ</span>
+            <h2>ਭਵਿੱਖ ਦੇ ਪ੍ਰੋਗਰਾਮ</h2>
             <p>
-                These upcoming programs are planned to support communities with
-                practical help, awareness, and long-term development.
+                ਇਹ ਆਉਣ ਵਾਲੇ ਪ੍ਰੋਗਰਾਮ ਸਮਾਜ ਨੂੰ ਵਿਵਹਾਰਿਕ ਸਹਾਇਤਾ,
+                ਜਾਗਰੂਕਤਾ ਅਤੇ ਲੰਬੇ ਸਮੇਂ ਦੇ ਵਿਕਾਸ ਲਈ ਯੋਜਿਤ ਕੀਤੇ ਗਏ ਹਨ।
             </p>
         </div>
 
@@ -390,57 +528,57 @@ body{
 
             <div class="program-card future-card">
                 <div class="program-img">
-                    <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=1200&auto=format&fit=crop" alt="Education Program">
+                    <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=1200&auto=format&fit=crop" alt="ਸਿੱਖਿਆ ਪ੍ਰੋਗਰਾਮ">
                 </div>
                 <div class="program-content">
-                    <span class="program-tag">Education</span>
-                    <h3>Free Education Support Camp</h3>
+                    <span class="program-tag">ਸਿੱਖਿਆ</span>
+                    <h3>ਮੁਫ਼ਤ ਸਿੱਖਿਆ ਸਹਾਇਤਾ ਕੈਂਪ</h3>
                     <p>
-                        A learning support program for underprivileged children with
-                        books, stationery, basic classes, and mentorship.
+                        ਵੰਚਿਤ ਬੱਚਿਆਂ ਲਈ ਕਿਤਾਬਾਂ, ਸਟੇਸ਼ਨਰੀ, ਬੁਨਿਆਦੀ ਕਲਾਸਾਂ
+                        ਅਤੇ ਮਾਰਗਦਰਸ਼ਨ ਨਾਲ ਸਿੱਖਣ ਸਹਾਇਤਾ ਪ੍ਰੋਗਰਾਮ।
                     </p>
                     <div class="program-info">
-                        <span><b>Date:</b> Coming Soon</span>
-                        <span><b>Location:</b> Local Community Center</span>
-                        <span><b>Focus:</b> Children Education</span>
+                        <span><b>ਤਾਰੀਖ:</b> ਜਲਦੀ ਆ ਰਹੀ ਹੈ</span>
+                        <span><b>ਸਥਾਨ:</b> ਸਥਾਨਕ ਕਮਿਊਨਿਟੀ ਸੈਂਟਰ</span>
+                        <span><b>ਕੇਂਦਰ:</b> ਬੱਚਿਆਂ ਦੀ ਸਿੱਖਿਆ</span>
                     </div>
                 </div>
             </div>
 
             <div class="program-card future-card">
                 <div class="program-img">
-                    <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop" alt="Health Camp">
+                    <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop" alt="ਸਿਹਤ ਕੈਂਪ">
                 </div>
                 <div class="program-content">
-                    <span class="program-tag">Healthcare</span>
-                    <h3>Free Health Check-up Drive</h3>
+                    <span class="program-tag">ਸਿਹਤ ਸੇਵਾ</span>
+                    <h3>ਮੁਫ਼ਤ ਸਿਹਤ ਜਾਂਚ ਕੈਂਪ</h3>
                     <p>
-                        A health awareness and medical check-up camp with basic
-                        consultation, health screening, and guidance.
+                        ਬੁਨਿਆਦੀ ਸਲਾਹ, ਸਿਹਤ ਜਾਂਚ ਅਤੇ ਮਾਰਗਦਰਸ਼ਨ ਨਾਲ
+                        ਸਿਹਤ ਜਾਗਰੂਕਤਾ ਅਤੇ ਮੈਡੀਕਲ ਚੈਕਅੱਪ ਕੈਂਪ।
                     </p>
                     <div class="program-info">
-                        <span><b>Date:</b> Coming Soon</span>
-                        <span><b>Location:</b> Rural Health Area</span>
-                        <span><b>Focus:</b> Community Healthcare</span>
+                        <span><b>ਤਾਰੀਖ:</b> ਜਲਦੀ ਆ ਰਹੀ ਹੈ</span>
+                        <span><b>ਸਥਾਨ:</b> ਪੇਂਡੂ ਸਿਹਤ ਖੇਤਰ</span>
+                        <span><b>ਕੇਂਦਰ:</b> ਸਮੁਦਾਇਕ ਸਿਹਤ ਸਹਾਇਤਾ</span>
                     </div>
                 </div>
             </div>
 
             <div class="program-card future-card">
                 <div class="program-img">
-                    <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=1200&auto=format&fit=crop" alt="Food Distribution">
+                    <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=1200&auto=format&fit=crop" alt="ਭੋਜਨ ਵੰਡ">
                 </div>
                 <div class="program-content">
-                    <span class="program-tag">Relief</span>
-                    <h3>Food & Essential Kit Distribution</h3>
+                    <span class="program-tag">ਰਾਹਤ ਸਹਾਇਤਾ</span>
+                    <h3>ਭੋਜਨ ਅਤੇ ਜ਼ਰੂਰੀ ਸਮਾਨ ਕਿੱਟ ਵੰਡ</h3>
                     <p>
-                        Distribution of food packets, hygiene kits, and daily essentials
-                        to families in need.
+                        ਲੋੜਵੰਦ ਪਰਿਵਾਰਾਂ ਨੂੰ ਭੋਜਨ ਪੈਕਟ, ਸਫ਼ਾਈ ਕਿੱਟਾਂ
+                        ਅਤੇ ਰੋਜ਼ਾਨਾ ਲੋੜੀਂਦਾ ਸਮਾਨ ਵੰਡਣਾ।
                     </p>
                     <div class="program-info">
-                        <span><b>Date:</b> Coming Soon</span>
-                        <span><b>Location:</b> Slum & Rural Areas</span>
-                        <span><b>Focus:</b> Family Support</span>
+                        <span><b>ਤਾਰੀਖ:</b> ਜਲਦੀ ਆ ਰਹੀ ਹੈ</span>
+                        <span><b>ਸਥਾਨ:</b> ਝੁੱਗੀ ਅਤੇ ਪੇਂਡੂ ਖੇਤਰ</span>
+                        <span><b>ਕੇਂਦਰ:</b> ਪਰਿਵਾਰਕ ਸਹਾਇਤਾ</span>
                     </div>
                 </div>
             </div>
@@ -453,109 +591,110 @@ body{
     <div class="container">
 
         <div class="section-title">
-            <span>Completed Work</span>
-            <h2>Past Programs</h2>
+            <span>ਪੂਰੇ ਹੋ ਚੁੱਕੇ ਕੰਮ</span>
+            <h2>ਪਿਛਲੇ ਪ੍ਰੋਗਰਾਮ</h2>
             <p>
-                Our past programs reflect our continuous commitment to serve
-                society with compassion, transparency, and responsibility.
+                ਸਾਡੇ ਪਿਛਲੇ ਪ੍ਰੋਗਰਾਮ ਸਮਾਜ ਦੀ ਸੇਵਾ ਪ੍ਰਤੀ ਸਾਡੀ ਲਗਾਤਾਰ
+                ਵਚਨਬੱਧਤਾ, ਪਾਰਦਰਸ਼ਤਾ ਅਤੇ ਜ਼ਿੰਮੇਵਾਰੀ ਨੂੰ ਦਰਸਾਉਂਦੇ ਹਨ।
             </p>
         </div>
 
         <div class="program-grid">
 
-           <div class="program-card past-card">
-    <div class="program-img">
-        <img src="images/gallery/12.jpeg" alt="Blood Donation Camp">
-    </div>
+            <div class="program-card past-card">
+                <div class="program-img">
+                    <img src="images/gallery/12.jpeg" alt="ਖੂਨ ਦਾਨ ਕੈਂਪ">
+                </div>
 
-    <div class="program-content">
-        <span class="program-tag">Blood Donation Camp</span>
+                <div class="program-content">
+                    <span class="program-tag">ਖੂਨ ਦਾਨ ਕੈਂਪ</span>
 
-        <h3>रक्तदान शिविर</h3>
+                    <h3>ਖੂਨ ਦਾਨ ਕੈਂਪ</h3>
 
-        <p>
-            भीम राव अंबेडकर सेवा सभा द्वारा आयोजित रक्तदान शिविर में
-            युवाओं एवं समाजसेवियों ने बढ़-चढ़कर भाग लिया और जरूरतमंद
-            मरीजों के लिए रक्तदान किया।
-        </p>
+                    <p>
+                        ਭੀਮ ਰਾਓ ਅੰਬੇਡਕਰ ਸੇਵਾ ਸਭਾ ਵੱਲੋਂ ਆਯੋਜਿਤ ਖੂਨ ਦਾਨ ਕੈਂਪ ਵਿੱਚ
+                        ਨੌਜਵਾਨਾਂ ਅਤੇ ਸਮਾਜ ਸੇਵਕਾਂ ਨੇ ਵੱਧ-ਚੜ੍ਹ ਕੇ ਹਿੱਸਾ ਲਿਆ
+                        ਅਤੇ ਲੋੜਵੰਦ ਮਰੀਜ਼ਾਂ ਲਈ ਖੂਨ ਦਾਨ ਕੀਤਾ।
+                    </p>
 
-        <div class="program-info">
-            <span><b>तिथि:</b> जनवरी 2026</span>
-            <span><b>स्थान:</b> ग्रेटर नोएडा</span>
-            <span><b>प्रभाव:</b> 200+ यूनिट रक्त संग्रह</span>
-        </div>
-    </div>
-</div>
+                    <div class="program-info">
+                        <span><b>ਤਾਰੀਖ:</b> ਜਨਵਰੀ 2026</span>
+                        <span><b>ਸਥਾਨ:</b> ਗ੍ਰੇਟਰ ਨੋਇਡਾ</span>
+                        <span><b>ਪ੍ਰਭਾਵ:</b> 200+ ਯੂਨਿਟ ਖੂਨ ਇਕੱਠਾ</span>
+                    </div>
+                </div>
+            </div>
 
             <div class="program-card past-card">
-    <div class="program-img">
-        <img src="images/gallery/11.jpeg" alt="Dr. B.R. Ambedkar Jayanti Celebration">
-    </div>
+                <div class="program-img">
+                    <img src="images/gallery/11.jpeg" alt="ਡਾ. ਬੀ. ਆਰ. ਅੰਬੇਡਕਰ ਜਯੰਤੀ ਸਮਾਰੋਹ">
+                </div>
 
-    <div class="program-content">
-        <span class="program-tag">सामाजिक जागरूकता</span>
+                <div class="program-content">
+                    <span class="program-tag">ਸਮਾਜਿਕ ਜਾਗਰੂਕਤਾ</span>
 
-        <h3>डॉ. बी.आर. अंबेडकर जी की 135वीं जयंती समारोह</h3>
+                    <h3>ਡਾ. ਬੀ. ਆਰ. ਅੰਬੇਡਕਰ ਜੀ ਦੀ 135ਵੀਂ ਜਯੰਤੀ ਸਮਾਰੋਹ</h3>
 
-        <p>
-            भीम राव अंबेडकर सेवा सभा द्वारा बाबा साहेब डॉ. बी.आर. अंबेडकर जी की
-            135वीं जयंती बड़े सम्मान एवं उत्साह के साथ मनाई गई, जिसमें सामाजिक
-            जागरूकता रैली, विचार गोष्ठी एवं सांस्कृतिक कार्यक्रम आयोजित किए गए।
-        </p>
+                    <p>
+                        ਭੀਮ ਰਾਓ ਅੰਬੇਡਕਰ ਸੇਵਾ ਸਭਾ ਵੱਲੋਂ ਬਾਬਾ ਸਾਹਿਬ ਡਾ. ਬੀ. ਆਰ.
+                        ਅੰਬੇਡਕਰ ਜੀ ਦੀ 135ਵੀਂ ਜਯੰਤੀ ਬੜੇ ਸਤਿਕਾਰ ਅਤੇ ਉਤਸ਼ਾਹ ਨਾਲ ਮਨਾਈ ਗਈ,
+                        ਜਿਸ ਵਿੱਚ ਸਮਾਜਿਕ ਜਾਗਰੂਕਤਾ ਰੈਲੀ, ਵਿਚਾਰ ਗੋਸ਼ਟੀ ਅਤੇ ਸੱਭਿਆਚਾਰਕ
+                        ਪ੍ਰੋਗਰਾਮ ਕਰਵਾਏ ਗਏ।
+                    </p>
 
-        <div class="program-info">
-            <span><b>तिथि:</b> अप्रैल 2026</span>
-            <span><b>स्थान:</b> गौतमबुद्धनगर</span>
-            <span><b>प्रभाव:</b> 1000+ लोगों की सहभागिता</span>
-        </div>
-    </div>
-</div>
+                    <div class="program-info">
+                        <span><b>ਤਾਰੀਖ:</b> ਅਪ੍ਰੈਲ 2026</span>
+                        <span><b>ਸਥਾਨ:</b> ਗੌਤਮ ਬੁੱਧ ਨਗਰ</span>
+                        <span><b>ਪ੍ਰਭਾਵ:</b> 1000+ ਲੋਕਾਂ ਦੀ ਭਾਗੀਦਾਰੀ</span>
+                    </div>
+                </div>
+            </div>
 
             <div class="program-card past-card">
-    <div class="program-img">
-        <img src="images/gallery/13.jpeg" alt="भजन संकीर्तन कार्यक्रम">
-    </div>
+                <div class="program-img">
+                    <img src="images/gallery/13.jpeg" alt="ਭਜਨ ਸੰਕੀਰਤਨ ਪ੍ਰੋਗਰਾਮ">
+                </div>
 
-    <div class="program-content">
-        <span class="program-tag">धार्मिक कार्यक्रम</span>
+                <div class="program-content">
+                    <span class="program-tag">ਧਾਰਮਿਕ ਪ੍ਰੋਗਰਾਮ</span>
 
-        <h3>भव्य भजन संकीर्तन एवं सत्संग</h3>
+                    <h3>ਭਵਿਆ ਭਜਨ ਸੰਕੀਰਤਨ ਅਤੇ ਸਤਸੰਗ</h3>
 
-        <p>
-            भीम राव अंबेडकर सेवा सभा द्वारा भव्य भजन संकीर्तन एवं सत्संग कार्यक्रम
-            का आयोजन किया गया, जिसमें श्रद्धालुओं ने भक्ति संगीत, कीर्तन एवं
-            सामाजिक एकता के संदेश के साथ सहभागिता की।
-        </p>
+                    <p>
+                        ਭੀਮ ਰਾਓ ਅੰਬੇਡਕਰ ਸੇਵਾ ਸਭਾ ਵੱਲੋਂ ਭਵਿਆ ਭਜਨ ਸੰਕੀਰਤਨ
+                        ਅਤੇ ਸਤਸੰਗ ਪ੍ਰੋਗਰਾਮ ਦਾ ਆਯੋਜਨ ਕੀਤਾ ਗਿਆ, ਜਿਸ ਵਿੱਚ ਸੰਗਤ ਨੇ
+                        ਭਗਤੀ ਸੰਗੀਤ, ਕੀਰਤਨ ਅਤੇ ਸਮਾਜਿਕ ਏਕਤਾ ਦੇ ਸੰਦੇਸ਼ ਨਾਲ ਭਾਗ ਲਿਆ।
+                    </p>
 
-        <div class="program-info">
-            <span><b>तिथि:</b> मार्च 2026</span>
-            <span><b>स्थान:</b> दनकौर, गौतमबुद्धनगर</span>
-            <span><b>प्रभाव:</b> 800+ श्रद्धालुओं की सहभागिता</span>
-        </div>
-    </div>
-</div>
+                    <div class="program-info">
+                        <span><b>ਤਾਰੀਖ:</b> ਮਾਰਚ 2026</span>
+                        <span><b>ਸਥਾਨ:</b> ਦਨਕੌਰ, ਗੌਤਮ ਬੁੱਧ ਨਗਰ</span>
+                        <span><b>ਪ੍ਰਭਾਵ:</b> 800+ ਸੰਗਤ ਦੀ ਭਾਗੀਦਾਰੀ</span>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
         <div class="impact-strip">
             <div class="impact-box">
                 <h3>15+</h3>
-                <p>Programs Completed</p>
+                <p>ਪ੍ਰੋਗਰਾਮ ਪੂਰੇ ਹੋਏ</p>
             </div>
 
             <div class="impact-box">
                 <h3>2K+</h3>
-                <p>Lives Impacted</p>
+                <p>ਜੀਵਨ ਪ੍ਰਭਾਵਿਤ</p>
             </div>
 
             <div class="impact-box">
                 <h3>100+</h3>
-                <p>Active Volunteers</p>
+                <p>ਸਰਗਰਮ ਵਾਲੰਟੀਅਰ</p>
             </div>
 
             <div class="impact-box">
                 <h3>10+</h3>
-                <p>Partner Supporters</p>
+                <p>ਸਹਿਯੋਗੀ ਸਾਥੀ</p>
             </div>
         </div>
 
