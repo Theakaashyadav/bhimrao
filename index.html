@@ -1,56 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NGO Website | Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Bhim Rao Ambedkar Samaj Seva Sabha</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
+
 :root{
-  --primary:#1d4e89;
-  --primary-dark:#12325c;
-  --secondary:#243447;
-  --accent:#d4a24c;
-  --accent-dark:#a8792b;
+  --primary:#547A95;
+  --primary-dark:#1b2732;
+  --secondary:#2C3947;
+  --accent:#C2A56D;
+  --accent-dark:#9e814d;
 
-  --maroon:#8b2f3d;
-  --saffron:#f28c28;
-  --teal:#1f7a74;
-  --purple:#5b3f9b;
-
-  --light:#f6f3ed;
+  --light:#E8EDF2;
   --white:#ffffff;
-  --text:#1f2937;
-  --muted:#5f6470;
-  --border:#d8c7a6;
+  --card:#ffffff;
+  --text:#1b2732;
+  --muted:#64717f;
 
-  --soft-green:#edf7f5;
-  --soft-blue:#eef3fb;
-  --cream:#fff5e4;
+  --section-soft:#dce4eb;
+  --section-blue:#2C3947;
+  --section-dark:#1b2732;
+  --section-gold:#f4ead6;
 
-  --shadow:0 18px 45px rgba(20,40,70,.12);
-  --shadow-hover:0 26px 65px rgba(20,40,70,.18);
+  --border:rgba(194,165,109,.35);
+  --shadow:0 18px 45px rgba(27,39,50,.16);
+  --shadow-hover:0 28px 70px rgba(27,39,50,.26);
+
+  --gradient-main:linear-gradient(135deg,#1b2732,#2C3947,#547A95);
+  --gradient-gold:linear-gradient(135deg,#e3cf9d,#C2A56D,#9e814d);
+  --gradient-soft:linear-gradient(135deg,#dce4eb,#E8EDF2,#f4ead6);
 }
 
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
+  font-family:"Poppins",sans-serif;
 }
 
 html{
   scroll-behavior:smooth;
+  overflow-x:hidden;
 }
 
 body{
-  font-family:"Segoe UI", Arial, sans-serif;
-  background:#f7f4ee;
+  background:var(--section-soft);
   color:var(--text);
-  line-height:1.7;
+  overflow-x:hidden;
 }
 
 img{
-  max-width:100%;
+  width:100%;
   display:block;
 }
 
@@ -60,434 +66,296 @@ a{
 
 .container{
   width:100%;
-  max-width:1200px;
-  margin:0 auto;
+  max-width:1250px;
+  margin:auto;
   padding:0 20px;
 }
 
 section{
-  padding:95px 0;
-  position:relative;
-  overflow:hidden;
+  padding:90px 0;
 }
 
 .section-title{
   text-align:center;
-  max-width:780px;
-  margin:0 auto 55px;
+  margin-bottom:60px;
 }
 
-.section-title span,
-.about-content span{
+.section-title span{
   display:inline-block;
-  color:#fff;
-  background:var(--primary);
-  padding:8px 18px;
+  background:var(--gradient-gold);
+  color:#1b2732;
+  padding:9px 20px;
   border-radius:40px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:1px;
   font-size:13px;
-  box-shadow:0 8px 20px rgba(29,78,137,.15);
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  box-shadow:0 10px 28px rgba(194,165,109,.25);
 }
 
 .section-title h2{
-  font-size:44px;
+  font-size:clamp(30px,4vw,46px);
+  margin-top:18px;
   color:var(--secondary);
-  margin:16px 0 12px;
-  line-height:1.18;
+  line-height:1.2;
 }
 
 .section-title h2::after{
   content:"";
   width:90px;
   height:4px;
-  background:var(--accent);
+  background:var(--gradient-gold);
   display:block;
-  margin:16px auto 0;
+  margin:18px auto 0;
   border-radius:50px;
 }
 
 .section-title p{
+  max-width:750px;
+  margin:15px auto 0;
   color:var(--muted);
-  font-size:17px;
+  line-height:1.8;
 }
 
 .btn{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   padding:14px 34px;
   border-radius:50px;
   font-weight:800;
   transition:.35s ease;
-  border:2px solid transparent;
-  box-shadow:0 10px 24px rgba(20,40,70,.12);
+  box-shadow:0 12px 28px rgba(0,0,0,.18);
 }
 
 .btn-primary{
-  background:var(--accent);
-  color:#1f2937;
+  background:var(--gradient-gold);
+  color:#1b2732;
 }
 
 .btn-primary:hover{
   transform:translateY(-5px);
-  background:var(--accent-dark);
-  color:#fff;
-}
-
-.btn-outline{
-  background:rgba(255,255,255,.12);
-  color:#fff;
-  border-color:rgba(255,255,255,.7);
-  backdrop-filter:blur(8px);
-}
-
-.btn-outline:hover{
-  background:#fff;
-  color:var(--maroon);
-  transform:translateY(-5px);
-}
-
-.btn-green{
-  background:var(--teal);
-  color:#fff;
-}
-
-.btn-green:hover{
-  transform:translateY(-5px);
-  background:#16655f;
+  box-shadow:0 18px 38px rgba(194,165,109,.35);
 }
 
 /* HERO */
+
 .hero{
-  min-height:92vh;
+  min-height:100vh;
   display:flex;
   align-items:center;
   background:
-    rgba(18,50,92,.78)
-    url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1600&q=80")
-    center/cover no-repeat;
-  background-blend-mode:multiply;
+  linear-gradient(115deg,rgba(27,39,50,.94),rgba(44,57,71,.84),rgba(84,122,149,.65)),
+  url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
   color:#fff;
 }
 
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.15);
-}
-
 .hero-content{
-  max-width:830px;
-  position:relative;
-  z-index:2;
+  max-width:850px;
 }
 
 .hero-content span{
   display:inline-block;
-  background:rgba(242,140,40,.15);
-  border:1px solid rgba(255,255,255,.25);
+  margin-bottom:22px;
+  background:rgba(255,255,255,.12);
+  color:#f4e1ad;
+  border:1px solid rgba(194,165,109,.45);
   padding:10px 22px;
   border-radius:40px;
-  margin-bottom:24px;
-  color:#ffe0a6;
+  backdrop-filter:blur(10px);
   font-weight:800;
 }
 
 .hero-content h1{
-  font-size:68px;
-  line-height:1.06;
-  margin-bottom:24px;
-  letter-spacing:-1.5px;
+  font-size:clamp(40px,6vw,72px);
+  line-height:1.08;
+  margin-bottom:22px;
+  text-shadow:0 14px 34px rgba(0,0,0,.35);
 }
 
 .hero-content p{
-  font-size:20px;
+  font-size:18px;
+  line-height:1.9;
   margin-bottom:36px;
-  color:#f3f4f6;
-  max-width:700px;
-}
-
-.hero-buttons{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
+  color:#edf3f7;
+  max-width:760px;
 }
 
 /* ABOUT */
+
 .about{
-  background:var(--soft-blue);
+  background:var(--gradient-soft);
 }
 
 .about-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:60px;
+  gap:55px;
   align-items:center;
+  background:rgba(255,255,255,.68);
+  border:1px solid var(--border);
+  padding:35px;
+  border-radius:36px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(12px);
 }
 
-.about-image{
+.about-img{
   position:relative;
 }
 
-.about-image::before{
+.about-img::before{
   content:"";
   position:absolute;
-  inset:20px -20px -20px 20px;
-  background:var(--accent);
+  inset:22px -18px -18px 22px;
+  background:var(--gradient-main);
   border-radius:30px;
   z-index:-1;
 }
 
-.about-image img{
+.about-img img{
   border-radius:30px;
-  height:530px;
-  width:100%;
+  height:550px;
   object-fit:cover;
   box-shadow:var(--shadow-hover);
+  border:6px solid #fff;
 }
 
 .about-content h2{
-  font-size:44px;
+  font-size:clamp(30px,4vw,42px);
+  margin-bottom:20px;
   color:var(--secondary);
-  margin:16px 0 18px;
-  line-height:1.18;
+  line-height:1.2;
 }
 
 .about-content p{
   color:var(--muted);
   margin-bottom:18px;
-  font-size:16.5px;
+  line-height:1.9;
 }
 
 .mission-box{
-  background:#fff;
-  padding:26px;
-  border-left:5px solid var(--maroon);
-  border-radius:20px;
+  background:linear-gradient(135deg,#ffffff,#f7f1e5);
+  padding:25px;
+  border-radius:22px;
   margin-top:20px;
   box-shadow:var(--shadow);
+  border:1px solid var(--border);
+  border-left:5px solid var(--accent);
 }
 
 .mission-box h3{
-  color:var(--secondary);
+  color:var(--primary-dark);
   margin-bottom:8px;
 }
 
-/* IMPACT */
-.impact{
-  background:var(--primary-dark);
+/* DOCUMENTS */
+
+.documents-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.document-card{
+  background:linear-gradient(145deg,#ffffff,#f3f6f9);
+  padding:35px;
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  text-align:center;
+  border:1px solid var(--border);
+  transition:.35s ease;
+}
+
+.document-card:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-hover);
+}
+
+.doc-icon{
+  width:78px;
+  height:78px;
+  margin:0 auto 20px;
+  border-radius:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--gradient-main);
+  color:#fff;
+  font-size:38px;
+}
+
+.document-card h3{
+  margin-bottom:15px;
+  color:var(--secondary);
+}
+
+.document-card p{
+  color:var(--muted);
+  margin-bottom:20px;
+}
+
+.view-btn{
+  padding:12px 24px;
+  border:none;
+  border-radius:40px;
+  background:var(--gradient-main);
+  color:#fff;
+  cursor:pointer;
+  font-weight:800;
+}
+
+/* TEAM */
+
+.team{
+  background:var(--section-blue);
+}
+
+.team .section-title h2,
+.team .section-title p{
   color:#fff;
 }
 
-.impact .section-title span{
-  background:rgba(255,255,255,.12);
-  color:#ffe0a6;
-}
-
-.impact .section-title h2,
-.impact .section-title p{
-  color:#fff;
-}
-
-.impact-grid{
+.team-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:25px;
 }
 
-.impact-card{
-  background:rgba(255,255,255,.08);
-  padding:40px 25px;
-  text-align:center;
-  border-radius:26px;
-  border:1px solid rgba(255,255,255,.12);
-  transition:.35s ease;
-}
-
-.impact-card:hover{
-  transform:translateY(-10px);
-  background:rgba(255,255,255,.14);
-}
-
-.impact-card h3{
-  font-size:48px;
-  color:#ffd36d;
-  margin-bottom:8px;
-}
-
-/* PROGRAMS */
-.programs{
-  background:var(--cream);
-}
-
-.program-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:22px;
-}
-
-.program-card{
-  background:#fff;
-  padding:34px 22px;
-  text-align:center;
-  border-radius:26px;
-  box-shadow:var(--shadow);
-  transition:.35s;
-  border:1px solid rgba(0,0,0,.05);
-}
-
-.program-card:hover{
-  transform:translateY(-10px);
-  box-shadow:var(--shadow-hover);
-}
-
-.program-icon{
-  width:82px;
-  height:82px;
-  margin:0 auto 20px;
-  border-radius:24px;
-  background:#eef3fb;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:36px;
-  color:var(--primary);
-}
-
-.program-card h3{
-  color:var(--secondary);
-  margin-bottom:10px;
-}
-
-.program-card p{
-  color:var(--muted);
-  font-size:15px;
-}
-
-/* CAMPAIGNS */
-.campaigns{
-  background:var(--soft-green);
-}
-
-.campaign-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
-}
-
-.campaign-card{
-  background:#fff;
+.team-card{
+  background:rgba(255,255,255,.94);
   border-radius:28px;
   overflow:hidden;
-  box-shadow:var(--shadow);
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.22);
+  border:1px solid rgba(255,255,255,.18);
   transition:.35s ease;
 }
 
-.campaign-card:hover{
-  transform:translateY(-10px);
-  box-shadow:var(--shadow-hover);
+.team-card:hover{
+  transform:translateY(-8px);
 }
 
-.campaign-card img{
-  width:100%;
-  height:245px;
+.team-card img{
+  height:320px;
   object-fit:cover;
 }
 
-.campaign-content{
-  padding:28px;
-}
-
-.campaign-content h3{
+.team-card h3{
+  margin-top:20px;
   color:var(--secondary);
-  margin-bottom:10px;
-  font-size:23px;
 }
 
-.campaign-content p{
-  color:var(--muted);
-  margin-bottom:18px;
-}
-
-.progress{
-  height:12px;
-  background:#ece4d5;
-  border-radius:20px;
-  overflow:hidden;
-  margin-bottom:10px;
-}
-
-.progress span{
+.team-card span{
   display:block;
-  height:100%;
-  background:var(--teal);
-}
-
-.campaign-amount{
-  display:flex;
-  justify-content:space-between;
-  color:var(--muted);
-  font-size:14px;
-  margin-bottom:22px;
-}
-
-/* STORIES */
-.stories{
-  background:#f7f4ee;
-}
-
-.story-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
-}
-
-.story-card{
-  background:#fff;
-  border-radius:28px;
-  padding:28px;
-  box-shadow:var(--shadow);
-  transition:.35s ease;
-}
-
-.story-card:hover{
-  transform:translateY(-10px);
-  box-shadow:var(--shadow-hover);
-}
-
-.story-card img{
-  width:100%;
-  height:225px;
-  object-fit:cover;
-  border-radius:20px;
-  margin-bottom:20px;
-}
-
-.story-card h3{
-  color:var(--secondary);
-  margin-bottom:10px;
-  font-size:23px;
-}
-
-.story-card p{
-  color:var(--muted);
-  margin-bottom:16px;
-}
-
-.testimonial{
-  background:#f4f6fb;
-  padding:14px 16px;
-  border-radius:16px;
-  font-style:italic;
-  color:var(--maroon);
-  font-weight:700;
+  padding-bottom:20px;
+  color:var(--primary);
+  font-weight:800;
 }
 
 /* GALLERY */
-.gallery{
-  background:var(--soft-blue);
-}
 
 .gallery-grid{
   display:grid;
@@ -499,1181 +367,921 @@ section{
   overflow:hidden;
   border-radius:24px;
   box-shadow:var(--shadow);
+  border:4px solid #fff;
 }
 
 .gallery-item img{
-  width:100%;
-  height:245px;
+  height:240px;
   object-fit:cover;
-  transition:.45s;
+  transition:.4s;
 }
 
 .gallery-item:hover img{
   transform:scale(1.08);
 }
 
-/* VOLUNTEER */
-.volunteer{
-  background:
-    rgba(18,50,92,.82)
-    url("https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1600&q=80")
-    center/cover no-repeat;
-  background-blend-mode:multiply;
-  color:#fff;
-  text-align:center;
+/* PROGRAMS */
+
+.programs{
+  background:var(--gradient-soft);
 }
 
-.volunteer-content{
-  max-width:840px;
-  margin:auto;
-}
-
-.volunteer-content h2{
-  font-size:48px;
-  margin-bottom:18px;
-}
-
-.volunteer-content p{
-  font-size:18px;
-  margin-bottom:30px;
-  color:#f3f4f6;
-}
-
-/* PARTNERS */
-.partners{
-  background:#fff;
-}
-
-.partners-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:22px;
-}
-
-.partner-card{
-  background:#f8fafc;
-  padding:32px 20px;
-  text-align:center;
-  border-radius:24px;
-  box-shadow:var(--shadow);
-  font-weight:800;
-  color:var(--secondary);
-  transition:.35s ease;
-}
-
-.partner-card:hover{
-  transform:translateY(-8px);
-  color:var(--maroon);
-}
-
-/* NEWS */
-.news{
-  background:var(--cream);
-}
-
-.news-grid{
+.program-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:30px;
+  gap:25px;
 }
 
-.news-card{
+.program-card{
   background:#fff;
-  border-radius:28px;
+  border-radius:30px;
   overflow:hidden;
   box-shadow:var(--shadow);
+  border:1px solid var(--border);
   transition:.35s ease;
 }
 
-.news-card:hover{
-  transform:translateY(-10px);
+.program-card:hover{
+  transform:translateY(-8px);
   box-shadow:var(--shadow-hover);
 }
 
-.news-card img{
-  width:100%;
-  height:225px;
+.program-card img{
+  height:240px;
   object-fit:cover;
 }
 
-.news-content{
-  padding:28px;
+.program-content{
+  padding:25px;
 }
 
-.news-date{
-  display:inline-block;
-  font-size:13px;
-  color:#fff;
-  background:var(--primary);
-  font-weight:800;
-  margin-bottom:12px;
-  padding:7px 14px;
-  border-radius:30px;
-}
-
-.news-content h3{
-  color:var(--secondary);
-  margin-bottom:10px;
-  font-size:23px;
-}
-
-.news-content p{
-  color:var(--muted);
-  margin-bottom:20px;
-}
-
-/* DONATION CTA */
-.donation-cta{
-  background:var(--accent);
-  text-align:center;
-  color:#111;
-}
-
-.donation-cta h2{
-  font-size:48px;
+.program-content h3{
   margin-bottom:15px;
-  color:#17222b;
+  color:var(--secondary);
 }
 
-.donation-cta p{
-  max-width:740px;
-  margin:0 auto 28px;
-  font-size:18px;
-  color:#352414;
+.program-content p{
+  color:var(--muted);
+  line-height:1.8;
+}
+
+/* ANNOUNCEMENT */
+
+.announcement-card{
+  background:var(--gradient-main);
+  padding:60px;
+  border-radius:35px;
+  box-shadow:var(--shadow-hover);
+  border:1px solid rgba(194,165,109,.32);
+  color:#fff;
+}
+
+.announcement-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.announcement-content h2{
+  font-size:clamp(30px,4vw,42px);
+  margin-bottom:20px;
+  color:#fff;
+}
+
+.announcement-content p{
+  line-height:1.9;
+  color:#edf3f7;
+  margin-bottom:18px;
+}
+
+.announcement-img img{
+  border-radius:28px;
+  height:500px;
+  object-fit:cover;
+  border:6px solid rgba(255,255,255,.9);
+}
+
+/* EVENT */
+
+.event{
+  background:var(--section-dark);
+}
+
+.event .section-title h2,
+.event .section-title p{
+  color:#fff;
+}
+
+.event-card{
+  background:rgba(255,255,255,.96);
+  border-radius:35px;
+  overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.28);
+}
+
+.event-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.event-image img{
+  height:100%;
+  object-fit:cover;
+}
+
+.event-content{
+  padding:50px;
+}
+
+.event-content h2{
+  font-size:clamp(30px,4vw,42px);
+  margin-bottom:20px;
+  color:var(--secondary);
+}
+
+.event-content p{
+  color:var(--muted);
+  line-height:1.9;
+  margin-bottom:18px;
+}
+
+/* CONTACT */
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+}
+
+.payment-box,
+.form-box{
+  background:linear-gradient(145deg,#ffffff,#f3f6f9);
+  padding:40px;
+  border-radius:30px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
+
+.payment-box h3,
+.form-box h3{
+  margin-bottom:20px;
+  color:var(--secondary);
+}
+
+.qr-box img{
+  width:220px;
+  margin:auto;
+  border-radius:20px;
+  border:5px solid #fff;
+  box-shadow:var(--shadow);
+}
+
+.bank-item{
+  margin-top:18px;
+  background:#f7f1e5;
+  padding:14px 16px;
+  border-radius:16px;
+  border:1px solid var(--border);
+}
+
+.bank-item span{
+  display:block;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.form-group{
+  margin-bottom:18px;
+}
+
+.form-group input,
+.form-group textarea{
+  width:100%;
+  padding:15px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  outline:none;
+  background:#fff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 4px rgba(194,165,109,.16);
+}
+
+.form-group textarea{
+  min-height:130px;
+}
+
+.submit-btn{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:50px;
+  background:var(--gradient-main);
+  color:#fff;
+  font-size:16px;
+  font-weight:800;
+  cursor:pointer;
 }
 
 /* RESPONSIVE */
-@media(max-width:1024px){
-  .program-grid,
-  .partners-grid{
-    grid-template-columns:repeat(3,1fr);
+
+@media(max-width:992px){
+
+  .about-grid,
+  .announcement-grid,
+  .event-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
   }
 
-  .impact-grid,
-  .gallery-grid{
+  .documents-grid,
+  .team-grid,
+  .gallery-grid,
+  .program-grid{
     grid-template-columns:repeat(2,1fr);
-  }
-
-  .campaign-grid,
-  .story-grid,
-  .news-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .hero-content h1{
-    font-size:52px;
   }
 }
 
 @media(max-width:768px){
-  section{
-    padding:65px 0;
-  }
 
-  .hero{
-    min-height:82vh;
-  }
-
-  .hero-content h1{
-    font-size:40px;
-  }
-
-  .hero-content p{
-    font-size:17px;
-  }
-
-  .about-grid{
-    grid-template-columns:1fr;
-  }
-
-  .about-image img{
-    height:360px;
-  }
-
-  .about-image::before{
-    display:none;
-  }
-
-  .section-title h2,
-  .about-content h2,
-  .volunteer-content h2,
-  .donation-cta h2{
-    font-size:32px;
-  }
-
-  .program-grid,
-  .partners-grid,
-  .campaign-grid,
-  .story-grid,
-  .news-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:480px){
   .container{
-    padding:0 15px;
+    padding:0 12px;
+  }
+
+  section{
+    padding:55px 0;
+  }
+
+  .section-title{
+    margin-bottom:35px;
+  }
+
+  .section-title span{
+    font-size:11px;
+    padding:7px 14px;
+  }
+
+  .section-title h2{
+    font-size:26px;
+  }
+
+  .section-title p{
+    font-size:14px;
+    line-height:1.6;
   }
 
   .hero{
-    min-height:78vh;
+    min-height:75vh;
+    padding:70px 0;
   }
 
   .hero-content h1{
     font-size:34px;
   }
 
-  .hero-buttons{
-    flex-direction:column;
+  .hero-content p{
+    font-size:15px;
+    line-height:1.7;
+  }
+
+  .about-grid,
+  .announcement-card{
+    padding:18px;
+    border-radius:24px;
+  }
+
+  .about-img::before{
+    display:none;
+  }
+
+  .about-img img,
+  .announcement-img img{
+    height:300px;
+    border-radius:20px;
+  }
+
+  .about-content h2,
+  .announcement-content h2,
+  .event-content h2{
+    font-size:26px;
+  }
+
+  .about-content p,
+  .announcement-content p,
+  .event-content p{
+    font-size:14px;
+    line-height:1.7;
+  }
+
+  .mission-box{
+    padding:18px;
+    border-radius:18px;
+  }
+
+  .documents-grid,
+  .team-grid,
+  .gallery-grid,
+  .program-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:12px;
+  }
+
+  .document-card,
+  .team-card,
+  .program-card{
+    border-radius:18px;
+  }
+
+  .document-card{
+    padding:18px 10px;
+  }
+
+  .doc-icon{
+    width:52px;
+    height:52px;
+    font-size:25px;
+    border-radius:16px;
+    margin-bottom:12px;
+  }
+
+  .document-card h3{
+    font-size:14px;
+    line-height:1.3;
+    margin-bottom:8px;
+  }
+
+  .document-card p{
+    font-size:12px;
+    line-height:1.5;
+    margin-bottom:12px;
+  }
+
+  .view-btn{
+    padding:9px 12px;
+    font-size:12px;
+  }
+
+  .team-card img{
+    height:190px;
+  }
+
+  .team-card h3{
+    font-size:14px;
+    margin-top:12px;
+  }
+
+  .team-card span{
+    font-size:12px;
+    padding-bottom:14px;
+  }
+
+  .gallery-item{
+    border-radius:16px;
+    border:3px solid #fff;
+  }
+
+  .gallery-item img{
+    height:145px;
+  }
+
+  .program-card img{
+    height:145px;
+  }
+
+  .program-content{
+    padding:14px 10px;
+  }
+
+  .program-content h3{
+    font-size:14px;
+    line-height:1.3;
+    margin-bottom:8px;
+  }
+
+  .program-content p{
+    font-size:12px;
+    line-height:1.5;
+  }
+
+  .event-content,
+  .payment-box,
+  .form-box{
+    padding:22px;
+    border-radius:22px;
+  }
+
+  .event-card{
+    border-radius:24px;
+  }
+
+  .contact-grid{
+    gap:20px;
+  }
+}
+
+@media(max-width:480px){
+
+  .container{
+    padding:0 10px;
+  }
+
+  section{
+    padding:45px 0;
+  }
+
+  .hero{
+    min-height:70vh;
+  }
+
+  .hero-content h1{
+    font-size:30px;
   }
 
   .btn{
-    text-align:center;
-    width:100%;
+    padding:11px 18px;
+    font-size:13px;
   }
 
-  .impact-grid,
-  .gallery-grid{
-    grid-template-columns:1fr;
+  .about-grid{
+    gap:24px;
   }
 
-  .campaign-amount{
-    flex-direction:column;
-    gap:5px;
+  .about-img img,
+  .announcement-img img{
+    height:260px;
   }
-}
-.ambedkar-announcement-section{
-    padding:100px 20px;
-    background:
-      radial-gradient(circle at top right, rgba(29,78,137,.10), transparent 28%),
-      radial-gradient(circle at bottom left, rgba(212,162,76,.14), transparent 30%),
-      linear-gradient(135deg,#f5f8ff,#fffdf8,#f7faff);
-    position:relative;
-    overflow:hidden;
-}
 
-.ambedkar-announcement-card{
-    max-width:1350px;
-    margin:auto;
-    background:rgba(255,255,255,.92);
-    backdrop-filter:blur(14px);
-
-    border-radius:38px;
-    padding:60px;
-
-    position:relative;
-    overflow:hidden;
-
-    border:1px solid rgba(212,162,76,.22);
-
-    box-shadow:
-      0 30px 80px rgba(20,40,70,.10),
-      0 8px 24px rgba(20,40,70,.06);
-}
-
-.ambedkar-announcement-card::before{
-    content:"";
-    position:absolute;
-    top:-120px;
-    right:-120px;
-
-    width:320px;
-    height:320px;
-
-    border-radius:50%;
-
-    background:rgba(29,78,137,.08);
-
-    filter:blur(20px);
-}
-
-.ambedkar-announcement-card::after{
-    content:"";
-    position:absolute;
-    bottom:-120px;
-    left:-120px;
-
-    width:280px;
-    height:280px;
-
-    border-radius:50%;
-
-    background:rgba(212,162,76,.10);
-
-    filter:blur(20px);
-}
-
-.ambedkar-badge{
-    display:inline-flex;
-    align-items:center;
+  .documents-grid,
+  .team-grid,
+  .gallery-grid,
+  .program-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
     gap:10px;
+  }
 
-    padding:12px 24px;
+  .document-card{
+    padding:15px 8px;
+  }
 
-    border-radius:50px;
+  .doc-icon{
+    width:46px;
+    height:46px;
+    font-size:22px;
+  }
 
-    background:linear-gradient(135deg,#eef3fb,#ffffff);
+  .document-card h3,
+  .team-card h3,
+  .program-content h3{
+    font-size:13px;
+  }
 
-    color:var(--primary);
+  .document-card p,
+  .program-content p,
+  .team-card span{
+    font-size:11px;
+  }
 
-    font-weight:800;
-    font-size:14px;
+  .team-card img{
+    height:160px;
+  }
 
-    letter-spacing:1px;
+  .gallery-item img{
+    height:120px;
+  }
 
-    margin-bottom:30px;
+  .program-card img{
+    height:120px;
+  }
 
-    border:1px solid rgba(29,78,137,.12);
+  .announcement-card{
+    padding:16px;
+  }
 
-    position:relative;
-    z-index:2;
-
-    box-shadow:0 10px 24px rgba(20,40,70,.06);
+  .event-content,
+  .payment-box,
+  .form-box{
+    padding:18px;
+  }
 }
 
-.ambedkar-badge::before{
-    content:"";
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    background:var(--accent);
-}
+@media(max-width:360px){
 
-.ambedkar-grid{
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    gap:55px;
-    align-items:center;
+  .documents-grid,
+  .team-grid,
+  .gallery-grid,
+  .program-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:8px;
+  }
 
-    position:relative;
-    z-index:2;
-}
-
-/* CONTENT */
-.ambedkar-content h2{
-    font-size:46px;
-    line-height:1.25;
-    color:var(--secondary);
-
-    margin-bottom:24px;
-
-    font-weight:900;
-}
-
-.ambedkar-content h2::after{
-    content:"";
-    width:95px;
-    height:5px;
-
-    background:linear-gradient(90deg,var(--accent),#f7c86c);
-
-    display:block;
-
-    margin-top:18px;
-
-    border-radius:50px;
-}
-
-.ambedkar-content p{
-    color:var(--muted);
-
-    font-size:18px;
-
-    line-height:2;
-
-    margin-bottom:24px;
-}
-
-.ambedkar-note{
-    margin-top:35px;
-
-    background:linear-gradient(135deg,#fff9ec,#fff4d8);
-
-    border-left:5px solid var(--accent);
-
-    padding:26px;
-
-    border-radius:22px;
-
-    color:var(--secondary);
-
-    line-height:1.9;
-
-    font-size:16px;
-
-    box-shadow:0 12px 30px rgba(20,40,70,.06);
-}
-
-.ambedkar-note strong{
-    color:var(--primary-dark);
-}
-
-/* GALLERY */
-.ambedkar-gallery{
-    display:flex;
-    flex-direction:column;
-    gap:22px;
-}
-
-.ambedkar-img{
-    overflow:hidden;
-
-    border-radius:28px;
-
-    box-shadow:
-      0 20px 40px rgba(0,0,0,.12),
-      0 6px 18px rgba(20,40,70,.08);
-
-    border:4px solid rgba(255,255,255,.95);
-
-    background:#fff;
-
-    position:relative;
-}
-
-.ambedkar-img::before{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:linear-gradient(to top,
-      rgba(20,40,70,.18),
-      transparent 55%);
-
-    opacity:0;
-
-    transition:.4s ease;
-
-    z-index:1;
-}
-
-.ambedkar-img:hover::before{
-    opacity:1;
-}
-
-.ambedkar-img img{
-    width:100%;
-    height:100%;
-
-    display:block;
-
-    object-fit:cover;
-
-    transition:.55s ease;
-}
-
-.ambedkar-img:hover img{
-    transform:scale(1.08);
-}
-
-.ambedkar-img.large{
-    height:360px;
-}
-
-/* SMALL GRID */
-.ambedkar-small-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.ambedkar-small-grid .ambedkar-img{
-    height:190px;
-}
-
-/* LOCATION BOX */
-.ambedkar-location-box{
-    background:
-      linear-gradient(135deg,#1d4e89,#243447);
-
-    color:#fff;
-
-    border-radius:26px;
-
-    padding:24px;
-
-    display:flex;
-    align-items:center;
-    gap:18px;
-
-    box-shadow:0 18px 40px rgba(20,40,70,.18);
-
-    position:relative;
-    overflow:hidden;
-}
-
-.ambedkar-location-box::before{
-    content:"";
-    position:absolute;
-
-    right:-40px;
-    top:-40px;
-
-    width:140px;
+  .team-card img{
     height:140px;
+  }
 
-    border-radius:50%;
+  .gallery-item img,
+  .program-card img{
+    height:105px;
+  }
 
-    background:rgba(255,255,255,.08);
+  .document-card{
+    padding:12px 6px;
+  }
+
+  .view-btn{
+    padding:8px 9px;
+    font-size:10px;
+  }
 }
 
-.ambedkar-location-box i{
-    width:62px;
-    height:62px;
-    min-width:62px;
 
-    border-radius:50%;
+/* DOCUMENT MODAL */
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:rgba(255,255,255,.16);
-
-    font-size:24px;
-
-    color:#ffd36d;
-
-    position:relative;
-    z-index:2;
-}
-
-.ambedkar-location-box h4{
-    margin:0 0 6px;
-
-    font-size:21px;
-
-    font-weight:800;
-
-    position:relative;
-    z-index:2;
-}
-
-.ambedkar-location-box p{
-    margin:0;
-
-    color:rgba(255,255,255,.84);
-
-    font-size:15px;
-
-    position:relative;
-    z-index:2;
-}
-
-/* TABLET */
-@media(max-width:1100px){
-
-    .ambedkar-grid{
-        grid-template-columns:1fr;
-    }
-
-    .ambedkar-gallery{
-        margin-top:10px;
-    }
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-    .ambedkar-announcement-section{
-        padding:70px 15px;
-    }
-
-    .ambedkar-announcement-card{
-        padding:36px 22px;
-        border-radius:28px;
-    }
-
-    .ambedkar-content h2{
-        font-size:32px;
-        line-height:1.35;
-    }
-
-    .ambedkar-content p{
-        font-size:16px;
-        line-height:1.9;
-    }
-
-    .ambedkar-note{
-        padding:20px;
-        font-size:15px;
-    }
-
-    .ambedkar-img.large{
-        height:240px;
-    }
-
-    .ambedkar-small-grid{
-        grid-template-columns:1fr 1fr;
-        gap:14px;
-    }
-
-    .ambedkar-small-grid .ambedkar-img{
-        height:160px;
-    }
-
-    .ambedkar-location-box{
-        padding:18px;
-        border-radius:20px;
-    }
-
-    .ambedkar-location-box h4{
-        font-size:18px;
-    }
-
-    .ambedkar-location-box p{
-        font-size:14px;
-    }
-}
-
-/* SMALL MOBILE */
-@media(max-width:520px){
-
-    .ambedkar-small-grid{
-        grid-template-columns:1fr;
-    }
-
-    .ambedkar-small-grid .ambedkar-img{
-        height:220px;
-    }
-
-    .ambedkar-content h2{
-        font-size:28px;
-    }
-
-    .ambedkar-badge{
-        font-size:12px;
-        padding:10px 18px;
-    }
-}
-
-.upcoming-event-section{
-  padding:90px 20px;
-  background:
-    radial-gradient(circle at top right, rgba(29,78,137,.12), transparent 28%),
-    radial-gradient(circle at bottom left, rgba(212,162,76,.16), transparent 32%),
-    var(--soft-blue);
-}
-
-.upcoming-event-card{
-  max-width:1250px;
-  margin:auto;
-  background:var(--white);
-  border-radius:36px;
-  padding:34px;
-  border:1px solid rgba(212,162,76,.28);
-  box-shadow:var(--shadow);
-  position:relative;
-  overflow:hidden;
-}
-
-.upcoming-event-card::before{
-  content:"";
-  position:absolute;
-  width:300px;
-  height:300px;
-  border-radius:50%;
-  background:rgba(29,78,137,.08);
-  right:-120px;
-  top:-120px;
-}
-
-.upcoming-event-card::after{
-  content:"";
-  position:absolute;
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  background:rgba(212,162,76,.13);
-  left:-100px;
-  bottom:-100px;
-}
-
-.event-layout{
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:38px;
-  align-items:stretch;
-  position:relative;
-  z-index:2;
-}
-
-/* LEFT IMAGE */
-.event-image-box{
-  position:relative;
-  min-height:100%;
-  border-radius:30px;
-  overflow:hidden;
-  box-shadow:0 20px 45px rgba(20,40,70,.16);
-  border:4px solid rgba(255,255,255,.95);
-  background:var(--soft-blue);
-}
-
-.event-image-box img{
-  width:100%;
-  height:100%;
-  min-height:620px;
-  object-fit:cover;
-  display:block;
-  transition:.45s ease;
-}
-
-.event-image-box:hover img{
-  transform:scale(1.06);
-}
-
-.event-image-box::after{
-  content:"";
-  position:absolute;
+.document-modal{
+  position:fixed;
   inset:0;
-  background:linear-gradient(to top, rgba(18,50,92,.70), transparent 55%);
-}
-
-.event-image-label{
-  position:absolute;
-  left:24px;
-  bottom:24px;
-  z-index:2;
-  background:var(--accent);
-  color:#111827;
-  padding:10px 20px;
-  border-radius:40px;
-  font-size:14px;
-  font-weight:900;
-  box-shadow:0 12px 28px rgba(0,0,0,.22);
-}
-
-/* RIGHT DETAILS */
-.event-details{
-  padding:18px 8px 18px 0;
-}
-
-.event-badge{
-  display:inline-block;
-  padding:10px 22px;
-  border-radius:40px;
-  background:var(--primary);
-  color:#fff;
-  font-size:14px;
-  font-weight:800;
-  letter-spacing:1px;
-  margin-bottom:22px;
-}
-
-.event-header span{
-  color:var(--accent-dark);
-  font-weight:900;
-  font-size:16px;
-}
-
-.event-header h2{
-  color:var(--secondary);
-  font-size:42px;
-  line-height:1.25;
-  margin:12px 0 18px;
-  font-weight:900;
-}
-
-.event-header h2::after{
-  content:"";
-  width:90px;
-  height:5px;
-  background:var(--accent);
-  display:block;
-  margin-top:18px;
-  border-radius:50px;
-}
-
-.event-header p{
-  color:var(--muted);
-  font-size:17px;
-  line-height:1.9;
-}
-
-.event-info-grid{
-  margin-top:32px;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-}
-
-.event-info-box{
-  background:var(--light);
-  border:1px solid rgba(212,162,76,.28);
-  border-radius:24px;
-  padding:24px 20px;
-  box-shadow:0 12px 30px rgba(20,40,70,.08);
-  transition:.35s ease;
-}
-
-.event-info-box:hover{
-  transform:translateY(-8px);
-  box-shadow:var(--shadow-hover);
-  background:var(--cream);
-}
-
-.event-icon{
-  width:58px;
-  height:58px;
-  border-radius:18px;
-  background:var(--primary);
-  color:#fff;
-  display:flex;
+  background:rgba(0,0,0,.85);
+  display:none;
   align-items:center;
   justify-content:center;
-  font-size:28px;
-  margin-bottom:16px;
+  padding:20px;
+  z-index:99999;
 }
 
-.event-info-box h3{
-  color:var(--secondary);
-  font-size:20px;
-  margin-bottom:10px;
-  font-weight:900;
+.document-modal.active{
+  display:flex;
 }
 
-.event-info-box p{
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.8;
-  margin:0;
+.document-modal img{
+  max-width:95%;
+  max-height:95vh;
+  border-radius:18px;
+  border:6px solid #fff;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+  object-fit:contain;
 }
 
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .event-layout{
-    grid-template-columns:1fr;
-  }
-
-  .event-image-box img{
-    min-height:420px;
-  }
-
-  .event-details{
-    padding:0;
-  }
+.close-modal{
+  position:absolute;
+  top:20px;
+  right:25px;
+  font-size:42px;
+  color:#fff;
+  cursor:pointer;
+  font-weight:700;
+  line-height:1;
 }
 
 @media(max-width:768px){
-  .upcoming-event-section{
-    padding:65px 15px;
+
+  .close-modal{
+    top:14px;
+    right:18px;
+    font-size:36px;
   }
 
-  .upcoming-event-card{
-    padding:20px;
-    border-radius:26px;
-  }
-
-  .event-image-box{
-    border-radius:22px;
-  }
-
-  .event-image-box img{
-    min-height:300px;
-  }
-
-  .event-header h2{
-    font-size:31px;
-  }
-
-  .event-header p{
-    font-size:16px;
-  }
-
-  .event-info-grid{
-    grid-template-columns:1fr;
-  }
 }
 </style>
 </head>
 
 <body>
+
+<!-- HEADER -->
 <div id="header"></div>
 
-  <main>
+<main>
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <span>Serving Humanity With Love</span>
-        <h1>Together We Can Bring Hope & Change Lives</h1>
-        <p>
-          We work to support education, food, healthcare, environment protection,
-          and women empowerment for underprivileged communities.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#contact-form" class="btn btn-primary">Donate Now</a>
-          <a href="#contact-form" class="btn btn-outline">Become a Volunteer</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="about">
-    <div class="container">
-      <div class="about-grid">
-
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=80" alt="NGO helping children">
-        </div>
-
-        <div class="about-content">
-          <span>About Our NGO</span>
-          <h2>We Are Committed To Helping People In Need</h2>
-          <p>
-            Our NGO is dedicated to creating positive change in society by supporting
-            underprivileged children, families, women, and communities through various
-            welfare programs.
-          </p>
-          <p>
-            We believe that small efforts can create big impact when people come
-            together with kindness, dedication, and purpose.
-          </p>
-
-          <div class="mission-box">
-            <h3>Our Vision</h3>
-            <p>
-              To build a society where every person has access to education,
-              healthcare, dignity, and equal opportunities.
-            </p>
-          </div>
-
-          <div class="mission-box">
-            <h3>Our Mission</h3>
-            <p>
-              To empower communities through education, healthcare, food support,
-              environmental awareness, and social welfare programs.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="impact">
-    <div class="container">
-      <div class="section-title">
-        <span>Our Impact</span>
-        <h2>Changing Lives Every Day</h2>
-        <p>With the support of our donors, volunteers, and partners, we continue to make a real difference.</p>
-      </div>
-
-      <div class="impact-grid">
-        <div class="impact-card">
-          <h3>10K+</h3>
-          <p>People Helped</p>
-        </div>
-
-        <div class="impact-card">
-          <h3>250+</h3>
-          <p>Projects Completed</p>
-        </div>
-
-        <div class="impact-card">
-          <h3>500+</h3>
-          <p>Active Volunteers</p>
-        </div>
-
-        <div class="impact-card">
-          <h3>50+</h3>
-          <p>Villages Reached</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-   <section class="ambedkar-announcement-section">
+<!-- HERO -->
+<section class="hero">
   <div class="container">
 
-    <div class="ambedkar-announcement-card">
+    <div class="hero-content">
+      <span>ਬਰਾਬਰੀ ਅਤੇ ਇਨਸਾਫ਼ ਨਾਲ ਮਨੁੱਖਤਾ ਦੀ ਸੇਵਾ</span>
 
-      <div class="ambedkar-badge">
-        भीम राव अंबेडकर सेवा सभा
+      <h1>ਆਓ ਮਿਲ ਕੇ ਇੱਕ ਬਿਹਤਰ ਸਮਾਜ ਬਣਾਈਏ</h1>
+
+      <p>
+        ਡਾ. ਭੀਮ ਰਾਓ ਅੰਬੇਡਕਰ ਸਮਾਜ ਸੇਵਾ ਸਭਾ (ਰਜਿ.) ਸਿੱਖਿਆ,
+        ਸਮਾਜਿਕ ਨਿਆਂ, ਜਾਗਰੂਕਤਾ, ਮਹਿਲਾ ਸਸ਼ਕਤੀਕਰਨ, ਸਿਹਤ ਸਹਾਇਤਾ
+        ਅਤੇ ਵੰਚਿਤ ਵਰਗਾਂ ਦੀ ਭਲਾਈ ਲਈ ਕੰਮ ਕਰਦੀ ਹੈ।
+      </p>
+
+      <a href="#contact" class="btn btn-primary">
+        ਦਾਨ ਅਤੇ ਸਹਿਯੋਗ ਕਰੋ
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+
+  <div class="container">
+
+    <div class="section-title">
+      <span>ਸਾਡੇ ਬਾਰੇ</span>
+      <h2>ਡਾ. ਭੀਮ ਰਾਓ ਅੰਬੇਡਕਰ ਸਮਾਜ ਸੇਵਾ ਸਭਾ</h2>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-img">
+        <img src="images/bhim rao1.jpg">
       </div>
 
-      <div class="ambedkar-grid">
+      <div class="about-content">
 
-        <!-- LEFT CONTENT -->
-        <div class="ambedkar-content">
+        <p>
+          ਡਾ. ਭੀਮ ਰਾਓ ਅੰਬੇਡਕਰ ਸਮਾਜ ਸੇਵਾ ਸਭਾ (ਰਜਿ.) ਸਮਾਜਿਕ ਭਲਾਈ,
+          ਬਰਾਬਰੀ, ਸਿੱਖਿਆ ਅਤੇ ਸਮਾਜ ਦੇ ਕਮਜ਼ੋਰ ਵਰਗਾਂ ਦੇ ਉੱਥਾਨ ਲਈ ਸਮਰਪਿਤ ਹੈ।
+        </p>
 
-          <h2>
-            प्रस्तावित डॉ. भीम राव अंबेडकर सामुदायिक सेवा केंद्र
-          </h2>
+        <p>
+          ਬਾਬਾ ਸਾਹਿਬ ਡਾ. ਬੀ. ਆਰ. ਅੰਬੇਡਕਰ ਜੀ ਦੇ ਵਿਚਾਰਾਂ ਤੋਂ ਪ੍ਰੇਰਿਤ ਹੋ ਕੇ,
+          ਸਾਡੀ ਸੰਸਥਾ ਸਮਾਜਿਕ ਨਿਆਂ, ਜਾਗਰੂਕਤਾ ਅਤੇ ਸਸ਼ਕਤੀਕਰਨ ਵੱਲ ਲਗਾਤਾਰ ਕੰਮ ਕਰਦੀ ਹੈ।
+        </p>
 
+        <div class="mission-box">
+          <h3>ਸਾਡਾ ਵਿਜ਼ਨ</h3>
           <p>
-            भीम राव अंबेडकर सेवा सभा द्वारा समाज के उत्थान, शिक्षा, सामाजिक जागरूकता,
-            युवाओं के मार्गदर्शन एवं जरूरतमंद लोगों की सहायता हेतु एक भव्य एवं आधुनिक
-            सामुदायिक सेवा केंद्र स्थापित करने की योजना बनाई जा रही है।
+            ਇੱਕ ਬਰਾਬਰ ਅਤੇ ਤਰੱਕੀਸ਼ੀਲ ਸਮਾਜ ਬਣਾਉਣਾ, ਜਿੱਥੇ ਹਰ ਵਿਅਕਤੀ ਨੂੰ
+            ਸਿੱਖਿਆ, ਸਨਮਾਨ, ਨਿਆਂ ਅਤੇ ਮੌਕਿਆਂ ਤੱਕ ਪਹੁੰਚ ਮਿਲੇ।
           </p>
-
-          <p>
-            यह केंद्र बाबा साहेब डॉ. भीम राव अंबेडकर जी के विचारों, समानता,
-            शिक्षा एवं सामाजिक न्याय के सिद्धांतों को समर्पित होगा।
-            यहां शिक्षा सहायता, सामाजिक कार्यक्रम, पुस्तकालय, सेमिनार एवं
-            समाज सेवा से जुड़ी गतिविधियों का आयोजन किया जाएगा।
-          </p>
-
-          <div class="ambedkar-note">
-            <strong>महत्वपूर्ण सूचना :</strong>
-            वर्तमान में सेवा केंद्र हेतु उपयुक्त स्थान एवं आवश्यक व्यवस्थाओं पर कार्य किया जा रहा है।
-            संस्था किसी भी प्रकार की अफवाह या गलत जानकारी का समर्थन नहीं करती।
-          </div>
-
         </div>
 
-       <!-- RIGHT IMAGES -->
-<div class="ambedkar-gallery">
+        <div class="mission-box">
+          <h3>ਸਾਡਾ ਮਿਸ਼ਨ</h3>
+          <p>
+            ਜਾਗਰੂਕਤਾ ਪ੍ਰੋਗਰਾਮਾਂ, ਸਿਹਤ ਸਹਾਇਤਾ, ਸਿੱਖਿਆ ਅਤੇ ਸਮਾਜਿਕ ਭਲਾਈ
+            ਗਤੀਵਿਧੀਆਂ ਰਾਹੀਂ ਸਮਾਜ ਨੂੰ ਸਸ਼ਕਤ ਬਣਾਉਣਾ।
+          </p>
+        </div>
 
-  <!-- MAIN IMAGE -->
-  <div class="ambedkar-img large">
-    <img src="images/gallery/location/1.jpeg" alt="प्रस्तावित स्थान">
-  </div>
+      </div>
 
-  <!-- 3 SMALL IMAGES -->
-  <div class="ambedkar-small-grid">
-
-    <div class="ambedkar-img">
-      <img src="images/gallery/location/2.jpeg" alt="निर्माण स्थल">
-    </div>
-
-    <div class="ambedkar-img">
-      <img src="images/gallery/location/3.jpeg" alt="सेवा केंद्र भूमि">
-    </div>
-
-    <div class="ambedkar-img">
-      <img src="images/gallery/location/4.jpeg" alt="प्रस्तावित क्षेत्र">
     </div>
 
   </div>
 
-  <!-- LOCATION BOX -->
-  <div class="ambedkar-location-box">
-    <i class="fas fa-map-marker-alt"></i>
+</section>
 
-    <div>
-      <h4>प्रस्तावित स्थान</h4>
-      <p>Village- Ulana, Tehsil- Rajpura,<br>
-          District- Patiala</p>
+<!-- LEGAL DOCUMENTS -->
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+      <span>ਪਾਰਦਰਸ਼ਤਾ</span>
+      <h2>ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼</h2>
     </div>
+
+    <div class="documents-grid">
+
+      <div class="document-card">
+        <div class="doc-icon">📄</div>
+        <h3>ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਸਰਟੀਫਿਕੇਟ</h3>
+        <p>ਸੰਸਥਾ ਦਾ ਅਧਿਕਾਰਕ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਸਰਟੀਫਿਕੇਟ।</p>
+
+        <button class="view-btn" onclick="openDocument('images/reg.jpeg')">
+          ਦਸਤਾਵੇਜ਼ ਵੇਖੋ
+        </button>
+      </div>
+
+      <div class="document-card">
+        <div class="doc-icon">🏦</div>
+        <h3>PAN ਕਾਰਡ</h3>
+        <p>ਸੰਸਥਾ ਦੇ PAN ਕਾਰਡ ਦੀ ਜਾਣਕਾਰੀ।</p>
+
+        <button class="view-btn" onclick="openDocument('images/pan.jpeg')">
+          ਦਸਤਾਵੇਜ਼ ਵੇਖੋ
+        </button>
+      </div>
+
+    </div>
+
   </div>
 
+</section>
+
+<div class="document-modal" id="documentModal">
+  <span class="close-modal" onclick="closeDocument()">
+    &times;
+  </span>
+
+  <img id="documentImage" src="" alt="ਦਸਤਾਵੇਜ਼ ਪੂਰਵ ਦਰਸ਼ਨ">
 </div>
 
-      </div>
+<!-- TEAM -->
+<section class="team">
 
-    </div>
-
-  </div>
-</section>
-
-
-
-  <section class="programs">
-    <div class="container">
-      <div class="section-title">
-        <span>What We Do</span>
-        <h2>Our Causes & Programs</h2>
-        <p>We work across multiple areas to create long-term social impact.</p>
-      </div>
-
-      <div class="program-grid">
-        <div class="program-card">
-          <div class="program-icon">📚</div>
-          <h3>Education</h3>
-          <p>Providing books, school kits, tuition support, and learning opportunities.</p>
-        </div>
-
-        <div class="program-card">
-          <div class="program-icon">🍛</div>
-          <h3>Food</h3>
-          <p>Distributing meals and ration kits to families and individuals in need.</p>
-        </div>
-
-        <div class="program-card">
-          <div class="program-icon">🏥</div>
-          <h3>Healthcare</h3>
-          <p>Organizing medical camps, health awareness, and medicine support.</p>
-        </div>
-
-        <div class="program-card">
-          <div class="program-icon">🌱</div>
-          <h3>Environment</h3>
-          <p>Promoting tree plantation, cleanliness drives, and green awareness.</p>
-        </div>
-
-        <div class="program-card">
-          <div class="program-icon">👩</div>
-          <h3>Women Empowerment</h3>
-          <p>Supporting women through skill development and awareness programs.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-<section class="upcoming-event-section">
   <div class="container">
 
-    <div class="upcoming-event-card">
+    <div class="section-title">
+      <span>ਮੈਂਬਰ</span>
+      <h2>ਟੀਮ ਮੈਂਬਰ</h2>
+    </div>
 
-      <div class="event-layout">
+    <div class="team-grid">
 
-        <!-- LEFT IMAGE -->
-        <div class="event-image-box">
-          <img src="images/events/event-1.jpg" alt="आगामी सामाजिक एवं जागरूकता कार्यक्रम">
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=900">
+        <h3>ਮੈਂਬਰ ਦਾ ਨਾਮ</h3>
+        <span>ਪ੍ਰਧਾਨ</span>
+      </div>
 
-          <div class="event-image-label">
-            Upcoming Event
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=900">
+        <h3>ਮੈਂਬਰ ਦਾ ਨਾਮ</h3>
+        <span>ਕੋਆਰਡੀਨੇਟਰ</span>
+      </div>
+
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=900">
+        <h3>ਮੈਂਬਰ ਦਾ ਨਾਮ</h3>
+        <span>ਵਾਲੰਟੀਅਰ ਮੁਖੀ</span>
+      </div>
+
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=900">
+        <h3>ਮੈਂਬਰ ਦਾ ਨਾਮ</h3>
+        <span>ਮੈਨੇਜਮੈਂਟ</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- GALLERY -->
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+      <span>ਗੈਲਰੀ</span>
+      <h2>ਸਾਡੀਆਂ ਗਤੀਵਿਧੀਆਂ ਅਤੇ ਪ੍ਰੋਗਰਾਮ</h2>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img src="images/gallery/1.jpeg">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery/2.jpeg">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery/3.jpeg">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery/4.jpeg">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs">
+
+  <div class="container">
+
+    <div class="section-title">
+      <span>ਪ੍ਰੋਗਰਾਮ</span>
+      <h2>ਪ੍ਰੋਗਰਾਮ ਅਤੇ ਪਿਛਲਾ ਕੰਮ</h2>
+    </div>
+
+    <div class="program-grid">
+
+      <div class="program-card">
+        <img src="images/gallery/11.jpeg">
+
+        <div class="program-content">
+          <h3>ਅੰਬੇਡਕਰ ਜਯੰਤੀ ਪ੍ਰੋਗਰਾਮ</h3>
+
+          <p>
+            ਹਜ਼ਾਰਾਂ ਲੋਕਾਂ ਦੀ ਭਾਗੀਦਾਰੀ ਨਾਲ ਸਮਾਜਿਕ ਜਾਗਰੂਕਤਾ ਰੈਲੀ
+            ਅਤੇ ਸਮਾਰੋਹ ਦਾ ਆਯੋਜਨ ਕੀਤਾ ਗਿਆ।
+          </p>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="images/gallery/12.jpeg">
+
+        <div class="program-content">
+          <h3>ਖੂਨ ਦਾਨ ਕੈਂਪ</h3>
+
+          <p>
+            ਲੋੜਵੰਦ ਮਰੀਜ਼ਾਂ ਦੀ ਸਹਾਇਤਾ ਲਈ ਖੂਨ ਦਾਨ ਕੈਂਪ ਦਾ ਆਯੋਜਨ ਕੀਤਾ ਗਿਆ।
+          </p>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="images/gallery/13.jpeg">
+
+        <div class="program-content">
+          <h3>ਭਜਨ ਅਤੇ ਸਤਸੰਗ</h3>
+
+          <p>
+            ਸੰਸਥਾ ਵੱਲੋਂ ਆਧਿਆਤਮਿਕ ਅਤੇ ਸਮਾਜਿਕ ਏਕਤਾ ਦਾ ਪ੍ਰੋਗਰਾਮ ਕਰਵਾਇਆ ਗਿਆ।
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- COMMUNITY CENTER -->
+<section>
+
+  <div class="container">
+
+    <div class="announcement-card">
+
+      <div class="announcement-grid">
+
+        <div class="announcement-content">
+
+          <div class="section-title" style="text-align:left;margin-bottom:20px">
+            <span>ਕਮਿਊਨਿਟੀ ਸੈਂਟਰ</span>
           </div>
+
+          <h2>ਪ੍ਰਸਤਾਵਿਤ ਕਮਿਊਨਿਟੀ ਸੇਵਾ ਕੇਂਦਰ</h2>
+
+          <p>
+            ਸਿੱਖਿਆ, ਸਮਾਜਿਕ ਜਾਗਰੂਕਤਾ, ਸੈਮੀਨਾਰਾਂ ਅਤੇ ਭਲਾਈ ਗਤੀਵਿਧੀਆਂ ਲਈ
+            ਇੱਕ ਆਧੁਨਿਕ ਕਮਿਊਨਿਟੀ ਸੈਂਟਰ ਬਣਾਉਣ ਦੀ ਯੋਜਨਾ ਹੈ।
+          </p>
+
+          <p>
+            ਇਹ ਕੇਂਦਰ ਡਾ. ਬੀ. ਆਰ. ਅੰਬੇਡਕਰ ਜੀ ਤੋਂ ਪ੍ਰੇਰਿਤ ਬਰਾਬਰੀ,
+            ਨਿਆਂ, ਸਿੱਖਿਆ ਅਤੇ ਸਸ਼ਕਤੀਕਰਨ ਦੇ ਸਿਧਾਂਤਾਂ ਨੂੰ ਸਮਰਪਿਤ ਹੋਵੇਗਾ।
+          </p>
+
         </div>
 
-        <!-- RIGHT DETAILS -->
-        <div class="event-details">
+        <div class="announcement-img">
+          <img src="images/gallery/location/1.jpeg">
+        </div>
 
-          <div class="event-badge">Upcoming Event</div>
+      </div>
 
-          <div class="event-header">
-            <span>भीम राव अंबेडकर सेवा सभा</span>
-            <h2>आगामी सामाजिक एवं जागरूकता कार्यक्रम</h2>
-            <p>
-              बाबा साहेब डॉ. भीम राव अंबेडकर जी के विचारों, शिक्षा, समानता और सामाजिक न्याय
-              के संदेश को जन-जन तक पहुंचाने हेतु विशेष कार्यक्रम का आयोजन किया जा रहा है।
-            </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- UPCOMING EVENT -->
+<section class="event">
+
+  <div class="container">
+
+    <div class="event-card">
+
+      <div class="event-grid">
+
+        <div class="event-image">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1400&auto=format&fit=crop"
+          alt="ਸਮਾਜਿਕ ਜਾਗਰੂਕਤਾ ਪ੍ਰੋਗਰਾਮ">
+        </div>
+
+        <div class="event-content">
+
+          <div class="section-title" style="text-align:left;margin-bottom:20px">
+            <span>ਆਉਣ ਵਾਲਾ ਪ੍ਰੋਗਰਾਮ</span>
           </div>
 
-          <div class="event-info-grid">
+          <h2>ਸਮਾਜਿਕ ਜਾਗਰੂਕਤਾ ਪ੍ਰੋਗਰਾਮ</h2>
 
-            <div class="event-info-box">
-              <div class="event-icon">🎤</div>
-              <h3>मुख्य विषय</h3>
-              <p>
-                शिक्षा, सामाजिक जागरूकता, युवा मार्गदर्शन, महिला सशक्तिकरण
-                एवं समाज सेवा।
-              </p>
-            </div>
+          <p>
+            ਸਿੱਖਿਆ, ਬਰਾਬਰੀ, ਯੁਵਾ ਸਸ਼ਕਤੀਕਰਨ ਅਤੇ ਸਮਾਜਿਕ ਨਿਆਂ ਤੇ ਕੇਂਦ੍ਰਿਤ
+            ਇੱਕ ਵਿਸ਼ੇਸ਼ ਜਾਗਰੂਕਤਾ ਪ੍ਰੋਗਰਾਮ।
+          </p>
 
-            <div class="event-info-box">
-              <div class="event-icon">📍</div>
-              <h3>कार्यक्रम स्थल</h3>
-              <p>
-                भीम राव अंबेडकर सेवा सभा परिसर,<br>
-                गौतमबुद्धनगर, उत्तर प्रदेश
-              </p>
-            </div>
+          <p>
+            ਡਾ. ਭੀਮ ਰਾਓ ਅੰਬੇਡਕਰ ਸਮਾਜ ਸੇਵਾ ਸਭਾ ਵੱਲੋਂ ਸਮਾਜਿਕ ਵਿਕਾਸ,
+            ਜਨ ਜਾਗਰੂਕਤਾ ਅਤੇ ਸਮਾਜਿਕ ਸਸ਼ਕਤੀਕਰਨ ਲਈ ਆਯੋਜਿਤ।
+          </p>
 
-            <div class="event-info-box">
-              <div class="event-icon">🤝</div>
-              <h3>आयोजक</h3>
-              <p>भीम राव अंबेडकर सेवा सभा</p>
-            </div>
-
-            <div class="event-info-box">
-              <div class="event-icon">🙏</div>
-              <h3>निवेदक</h3>
-              <p>भीम राव अंबेडकर सेवा सभा समिति</p>
-            </div>
-
-          </div>
+          <a href="#contact" class="btn btn-primary">
+            ਪ੍ਰੋਗਰਾਮ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ
+          </a>
 
         </div>
 
@@ -1682,219 +1290,171 @@ section{
     </div>
 
   </div>
+
 </section>
 
-  <section class="stories">
-    <div class="container">
-      <div class="section-title">
-        <span>Stories Of Hope</span>
-        <h2>Success Stories</h2>
-        <p>Real stories from people whose lives were touched by your support.</p>
-      </div>
+<!-- CONTACT -->
+<section id="contact">
 
-      <div class="story-grid">
+  <div class="container">
 
-        <div class="story-card">
-          <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80" alt="Child education success story">
-          <h3>Riya’s Education Journey</h3>
-          <p>
-            With support from our education program, Riya received school supplies and
-            continued her studies with confidence.
-          </p>
-          <div class="testimonial">“Now I can dream bigger.”</div>
-        </div>
-
-        <div class="story-card">
-          <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=80" alt="Healthcare support story">
-          <h3>Healthcare For Rural Families</h3>
-          <p>
-            Our free medical camp helped hundreds of people receive basic health checkups
-            and medical guidance.
-          </p>
-          <div class="testimonial">“This support helped our family.”</div>
-        </div>
-
-        <div class="story-card">
-          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=900&q=80" alt="Volunteer story">
-          <h3>Volunteers Making Change</h3>
-          <p>
-            Our volunteers actively participate in food drives, awareness campaigns,
-            and community support programs.
-          </p>
-          <div class="testimonial">“Serving people gives true happiness.”</div>
-        </div>
-
-      </div>
+    <div class="section-title">
+      <span>ਸੰਪਰਕ ਅਤੇ ਦਾਨ</span>
+      <h2>ਸਾਡੇ ਮਿਸ਼ਨ ਦਾ ਸਹਿਯੋਗ ਕਰੋ</h2>
     </div>
-  </section>
 
-  <!-- <section class="gallery">
-    <div class="container">
-      <div class="section-title">
-        <span>Our Moments</span>
-        <h2>Gallery Preview</h2>
-        <p>Photos and memories from our campaigns, events, and community programs.</p>
-      </div>
+    <div class="contact-grid">
 
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=700&q=80" alt="NGO volunteers">
+      <div class="payment-box">
+
+        <h3>ਦਾਨ ਦੀ ਜਾਣਕਾਰੀ</h3>
+
+        <div class="qr-box">
+          <img src="images/qr.png">
         </div>
 
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=700&q=80" alt="Children support">
+        <div class="bank-item">
+          <span>ਖਾਤਾ ਨਾਮ</span>
+          <b>NGO Foundation</b>
         </div>
 
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=700&q=80" alt="Environment campaign">
+        <div class="bank-item">
+          <span>ਖਾਤਾ ਨੰਬਰ</span>
+          <b>XXXXXXXXXXXX</b>
         </div>
 
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=700&q=80" alt="Community work">
+        <div class="bank-item">
+          <span>IFSC ਕੋਡ</span>
+          <b>XXXX0000</b>
         </div>
-      </div>
-    </div>
-  </section> -->
 
-  <!-- <section class="volunteer">
-    <div class="container">
-      <div class="volunteer-content">
-        <h2>Become A Volunteer</h2>
-        <p>
-          Your time, skills, and kindness can bring positive change.
-          Join us and become a part of our mission to serve humanity.
-        </p>
-        <a href="#" class="btn btn-primary">Join As Volunteer</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="partners">
-    <div class="container">
-      <div class="section-title">
-        <span>Supporters</span>
-        <h2>Partners & Sponsors</h2>
-        <p>We are thankful to all our partners, donors, and sponsors.</p>
       </div>
 
-      <div class="partners-grid">
-        <div class="partner-card">Partner 1</div>
-        <div class="partner-card">Partner 2</div>
-        <div class="partner-card">Partner 3</div>
-        <div class="partner-card">Partner 4</div>
-        <div class="partner-card">Partner 5</div>
-      </div>
-    </div>
-  </section> -->
+      <div class="form-box">
 
-  <!-- <section class="news">
-    <div class="container">
-      <div class="section-title">
-        <span>Latest Updates</span>
-        <h2>Latest News & Blog</h2>
-        <p>Stay updated with our recent events, stories, and social activities.</p>
-      </div>
+        <h3>ਸੰਪਰਕ ਫਾਰਮ</h3>
 
-      <div class="news-grid">
+        <form>
 
-        <div class="news-card">
-          <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=900&q=80" alt="Food Distribution Drive">
-          <div class="news-content">
-            <div class="news-date">12 May 2026</div>
-            <h3>Food Distribution Drive</h3>
-            <p>We distributed food kits to families and daily wage workers in nearby areas.</p>
-            <a href="#" class="btn btn-green">Read More</a>
+          <div class="form-group">
+            <input type="text" placeholder="ਪੂਰਾ ਨਾਮ">
           </div>
-        </div>
 
-        <div class="news-card">
-          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80" alt="Tree Plantation Campaign">
-          <div class="news-content">
-            <div class="news-date">10 May 2026</div>
-            <h3>Tree Plantation Campaign</h3>
-            <p>Our volunteers planted trees and spread awareness about environmental care.</p>
-            <a href="#" class="btn btn-green">Read More</a>
+          <div class="form-group">
+            <input type="email" placeholder="ਈਮੇਲ ਪਤਾ">
           </div>
-        </div>
 
-        <div class="news-card">
-          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80" alt="Health Checkup Camp">
-          <div class="news-content">
-            <div class="news-date">08 May 2026</div>
-            <h3>Free Health Checkup Camp</h3>
-            <p>Hundreds of people received free health checkups and basic medical support.</p>
-            <a href="#" class="btn btn-green">Read More</a>
+          <div class="form-group">
+            <input type="tel" placeholder="ਫੋਨ ਨੰਬਰ">
           </div>
-        </div>
+
+          <div class="form-group">
+            <textarea placeholder="ਆਪਣਾ ਸੁਨੇਹਾ ਲਿਖੋ"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            ਪੁੱਛਗਿੱਛ ਭੇਜੋ
+          </button>
+
+        </form>
 
       </div>
+
     </div>
-  </section> -->
+
+  </div>
+
+</section>
 
 </main>
-<div id="contact-form"></div>
+
+<!-- FOOTER -->
 <div id="footer"></div>
 
 <script>
+
+/* HEADER FETCH */
+
 fetch("header.html")
-  .then(res => res.text())
-  .then(data => {
-    const headerBox = document.getElementById("header");
-    headerBox.innerHTML = data;
+.then(res => res.text())
+.then(data => {
 
-    const menuBtn = headerBox.querySelector(".menu-btn");
-    const navLinks = headerBox.querySelector(".nav-links");
+  const headerBox = document.getElementById("header");
+  headerBox.innerHTML = data;
 
-    if (menuBtn && navLinks) {
-      menuBtn.addEventListener("click", function(e){
-        e.preventDefault();
-        e.stopPropagation();
+  /* HAMBURGER MENU */
+  const menuBtn = headerBox.querySelector(".menu-btn");
+  const navLinks = headerBox.querySelector(".nav-links");
 
-        navLinks.classList.toggle("show");
+  if(menuBtn && navLinks){
+
+    menuBtn.addEventListener("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      navLinks.classList.toggle("show");
+
+      const icon = menuBtn.querySelector("i");
+
+      if(icon){
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-times");
+      }
+    });
+
+    /* CLOSE MENU AFTER CLICK */
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("show");
 
         const icon = menuBtn.querySelector("i");
+
         if(icon){
-          icon.classList.toggle("fa-bars");
-          icon.classList.toggle("fa-times");
+          icon.classList.add("fa-bars");
+          icon.classList.remove("fa-times");
         }
+
       });
+    });
 
-      navLinks.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("show");
+    /* CLOSE MENU ON OUTSIDE CLICK */
+    document.addEventListener("click", function(e){
 
-          const icon = menuBtn.querySelector("i");
-          if(icon){
-            icon.classList.add("fa-bars");
-            icon.classList.remove("fa-times");
-          }
-        });
-      });
+      if(!headerBox.contains(e.target)){
 
-      document.addEventListener("click", function(e){
-        if(!headerBox.contains(e.target)){
-          navLinks.classList.remove("show");
+        navLinks.classList.remove("show");
 
-          const icon = menuBtn.querySelector("i");
-          if(icon){
-            icon.classList.add("fa-bars");
-            icon.classList.remove("fa-times");
-          }
+        const icon = menuBtn.querySelector("i");
+
+        if(icon){
+          icon.classList.add("fa-bars");
+          icon.classList.remove("fa-times");
         }
-      });
-    }
 
-    loadGoogleTranslate();
-  })
-  .catch(err => console.log("Header Load Error:", err));
+      }
 
-function googleTranslateElementInit() {
+    });
+
+  }
+
+  /* LOAD GOOGLE TRANSLATE */
+  loadGoogleTranslate();
+
+})
+.catch(err => console.log("Header Load Error:", err));
+
+
+/* GOOGLE TRANSLATE */
+
+function googleTranslateElementInit(){
+
   const translateBox = document.getElementById("google_translate_element");
 
-  if (translateBox && translateBox.innerHTML.trim() === "") {
+  if(translateBox && translateBox.innerHTML.trim() === ""){
 
     new google.translate.TranslateElement({
-      pageLanguage: "pa", // Punjabi is original language
+      pageLanguage: "en",
       includedLanguages: "en,hi,ur,pa,bn,ta,te,mr,gu,kn,ml,ne",
       autoDisplay: false,
       multilanguagePage: true,
@@ -1902,42 +1462,94 @@ function googleTranslateElementInit() {
     }, "google_translate_element");
 
   }
+
 }
 
-function loadGoogleTranslate() {
+function loadGoogleTranslate(){
 
-  // Prevent duplicate script loading
-  if (document.getElementById("googleTranslateScript")) {
-    if (typeof google !== "undefined" && google.translate) {
+  /* PREVENT DUPLICATE SCRIPT */
+
+  if(document.getElementById("googleTranslateScript")){
+
+    if(typeof google !== "undefined" && google.translate){
       googleTranslateElementInit();
     }
+
     return;
   }
 
   const script = document.createElement("script");
+
   script.id = "googleTranslateScript";
+
   script.src =
-    "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+  "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
 
   document.body.appendChild(script);
+
 }
 
-    // Load Footer
-    fetch("footer.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("footer").innerHTML = data);
-      
-      fetch("contact.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("contact-form").innerHTML = data;
-  });
+/* FOOTER FETCH */
 
-  fetch("floating.html")
+fetch("footer.html")
+.then(res => res.text())
+.then(data => {
+  document.getElementById("footer").innerHTML = data;
+});
+
+
+/* OPEN DOCUMENT */
+
+function openDocument(imagePath){
+
+  const modal = document.getElementById("documentModal");
+  const image = document.getElementById("documentImage");
+
+  image.src = imagePath;
+
+  modal.classList.add("active");
+
+  document.body.style.overflow = "hidden";
+}
+
+/* CLOSE DOCUMENT */
+
+function closeDocument(){
+
+  const modal = document.getElementById("documentModal");
+
+  modal.classList.remove("active");
+
+  document.body.style.overflow = "auto";
+}
+
+/* CLOSE ON OUTSIDE CLICK */
+
+document.getElementById("documentModal")
+.addEventListener("click", function(e){
+
+  if(e.target === this){
+    closeDocument();
+  }
+
+});
+
+/* CLOSE ON ESC */
+
+document.addEventListener("keydown", function(e){
+
+  if(e.key === "Escape"){
+    closeDocument();
+  }
+
+});
+fetch("floating.html")
   .then(res => res.text())
   .then(data => {
     document.body.insertAdjacentHTML("beforeend", data);
   });
+
 </script>
+
 </body>
 </html>
