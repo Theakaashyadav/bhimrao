@@ -35,8 +35,10 @@
     justify-content:center;
     text-decoration:none;
     overflow:hidden;
-    box-shadow:var(--shadow);
+    backdrop-filter:blur(10px);
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
     transition:0.35s ease;
+    border:1px solid rgba(255,255,255,.15);
 }
 
 /* GLOW EFFECT */
@@ -51,6 +53,30 @@
     transition:0.4s ease;
 }
 
+/* SHINE EFFECT */
+
+.dise-float-btn::after{
+    content:"";
+    position:absolute;
+    width:140%;
+    height:140%;
+    background:linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(255,255,255,.22) 50%,
+        transparent 80%
+    );
+    top:-120%;
+    left:-120%;
+    transform:rotate(25deg);
+    transition:.6s ease;
+}
+
+.dise-float-btn:hover::after{
+    top:100%;
+    left:100%;
+}
+
 .dise-float-btn:hover::before{
     transform:scale(1.5);
 }
@@ -59,21 +85,21 @@
 
 .dise-float-btn:hover{
     transform:translateY(-6px) scale(1.08);
-    box-shadow:var(--shadow-hover);
+    box-shadow:0 26px 55px rgba(0,0,0,.24);
 }
 
 /* CALL BUTTON */
 
 .dise-call-btn{
-    background:linear-gradient(135deg,var(--accent),#ffd56a);
-    color:var(--secondary);
+    background:linear-gradient(135deg,#ffd56a,#C2A56D,#9e814d);
+    color:#1b2732;
 }
 
 /* WHATSAPP BUTTON */
 
 .dise-whatsapp-btn{
-    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-    color:var(--white);
+    background:linear-gradient(135deg,#25D366,#1ebe5d,#128C7E);
+    color:#ffffff;
     animation:diseWhatsappPulse 2s infinite;
 }
 
@@ -108,38 +134,82 @@
 
 @keyframes diseWhatsappPulse{
     0%{
-        box-shadow:0 0 0 0 rgba(31,122,77,0.45);
+        box-shadow:0 0 0 0 rgba(37,211,102,0.48);
     }
 
     70%{
-        box-shadow:0 0 0 18px rgba(31,122,77,0);
+        box-shadow:0 0 0 20px rgba(37,211,102,0);
     }
 
     100%{
-        box-shadow:0 0 0 0 rgba(31,122,77,0);
+        box-shadow:0 0 0 0 rgba(37,211,102,0);
     }
 }
 
 /* MOBILE */
 
-@media(max-width:576px){
+@media(max-width:768px){
+
     .dise-floating-contact{
-        right:16px;
-        bottom:16px;
-        gap:14px;
+        right:18px;
+        bottom:18px;
+        gap:15px;
     }
 
     .dise-float-btn{
-        width:52px;
-        height:52px;
+        width:56px;
+        height:56px;
     }
 
     .dise-call-btn i{
-        font-size:21px;
+        font-size:22px;
     }
 
     .dise-whatsapp-btn i{
-        font-size:30px;
+        font-size:31px;
+    }
+}
+
+@media(max-width:576px){
+
+    .dise-floating-contact{
+        right:14px;
+        bottom:14px;
+        gap:12px;
+    }
+
+    .dise-float-btn{
+        width:50px;
+        height:50px;
+    }
+
+    .dise-call-btn i{
+        font-size:19px;
+    }
+
+    .dise-whatsapp-btn i{
+        font-size:27px;
+    }
+}
+
+@media(max-width:380px){
+
+    .dise-floating-contact{
+        right:12px;
+        bottom:12px;
+    }
+
+    .dise-float-btn{
+        width:46px;
+        height:46px;
+    }
+
+    .dise-call-btn i{
+        font-size:17px;
+    }
+
+    .dise-whatsapp-btn i{
+        font-size:24px;
     }
 }
 </style>
