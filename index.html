@@ -254,12 +254,15 @@ section{
 /* DOCUMENTS */
 
 .documents-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
   gap:25px;
 }
 
 .document-card{
+  width:100%;
+  max-width:380px;
   background:linear-gradient(145deg,#ffffff,#f3f6f9);
   padding:35px;
   border-radius:28px;
@@ -290,14 +293,20 @@ section{
 .document-card h3{
   margin-bottom:15px;
   color:var(--secondary);
+  font-size:22px;
+  font-weight:700;
 }
 
 .document-card p{
   color:var(--muted);
   margin-bottom:20px;
+  line-height:1.7;
 }
 
 .view-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   padding:12px 24px;
   border:none;
   border-radius:40px;
@@ -305,8 +314,48 @@ section{
   color:#fff;
   cursor:pointer;
   font-weight:800;
+  text-decoration:none;
+  transition:.3s ease;
 }
 
+.view-btn:hover{
+  transform:translateY(-2px);
+}
+
+/* Tablet */
+
+@media (max-width:992px){
+
+  .document-card{
+    max-width:340px;
+  }
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+  .documents-grid{
+    gap:20px;
+  }
+
+  .document-card{
+    max-width:100%;
+    padding:28px 22px;
+  }
+
+  .doc-icon{
+    width:68px;
+    height:68px;
+    font-size:32px;
+  }
+
+  .document-card h3{
+    font-size:20px;
+  }
+
+}
 /* TEAM */
 
 .team{
@@ -407,8 +456,10 @@ section{
 }
 
 .program-card img{
+  width:100%;
   height:240px;
   object-fit:cover;
+  display:block;
 }
 
 .program-content{
@@ -423,8 +474,59 @@ section{
 .program-content p{
   color:var(--muted);
   line-height:1.8;
+  margin-bottom:20px;
 }
 
+.donation-row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  background:#f7f1e5;
+  padding:14px 16px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  margin-bottom:14px;
+}
+
+.donation-row span{
+  display:block;
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:4px;
+}
+
+.donation-row b{
+  color:var(--secondary);
+  font-size:16px;
+}
+
+.progress-bar{
+  width:100%;
+  height:10px;
+  background:#e8edf2;
+  border-radius:50px;
+  overflow:hidden;
+}
+
+.progress-bar span{
+  display:block;
+  height:100%;
+  background:var(--gradient-main);
+  border-radius:50px;
+}
+
+/* Mobile */
+@media(max-width:992px){
+  .program-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:768px){
+  .program-grid{
+    grid-template-columns:1fr;
+  }
+}
 /* ANNOUNCEMENT */
 
 .announcement-card{
@@ -506,16 +608,17 @@ section{
   margin-bottom:18px;
 }
 
-/* CONTACT */
+/* CONTACT / DONATION */
 
 .contact-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:35px;
+  gap:30px;
+  align-items:stretch;
 }
 
-.payment-box,
-.form-box{
+.qr-card,
+.bank-card{
   background:linear-gradient(145deg,#ffffff,#f3f6f9);
   padding:40px;
   border-radius:30px;
@@ -523,70 +626,71 @@ section{
   border:1px solid var(--border);
 }
 
-.payment-box h3,
-.form-box h3{
-  margin-bottom:20px;
+.qr-card h3,
+.bank-card h3{
+  margin-bottom:25px;
+  text-align:center;
   color:var(--secondary);
 }
 
+.qr-box{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100%;
+}
+
 .qr-box img{
-  width:220px;
-  margin:auto;
+  width:280px;
+  max-width:100%;
   border-radius:20px;
   border:5px solid #fff;
   box-shadow:var(--shadow);
 }
 
 .bank-item{
-  margin-top:18px;
+  margin-bottom:16px;
   background:#f7f1e5;
-  padding:14px 16px;
+  padding:15px 18px;
   border-radius:16px;
   border:1px solid var(--border);
+}
+
+.bank-item:last-child{
+  margin-bottom:0;
 }
 
 .bank-item span{
   display:block;
   color:var(--muted);
   font-size:14px;
+  margin-bottom:5px;
 }
 
-.form-group{
-  margin-bottom:18px;
-}
-
-.form-group input,
-.form-group textarea{
-  width:100%;
-  padding:15px;
-  border:1px solid var(--border);
-  border-radius:14px;
-  outline:none;
-  background:#fff;
-}
-
-.form-group input:focus,
-.form-group textarea:focus{
-  border-color:var(--accent);
-  box-shadow:0 0 0 4px rgba(194,165,109,.16);
-}
-
-.form-group textarea{
-  min-height:130px;
-}
-
-.submit-btn{
-  width:100%;
-  padding:16px;
-  border:none;
-  border-radius:50px;
-  background:var(--gradient-main);
-  color:#fff;
+.bank-item b{
+  color:var(--secondary);
   font-size:16px;
-  font-weight:800;
-  cursor:pointer;
+  word-break:break-word;
 }
 
+/* Mobile */
+
+@media (max-width:768px){
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .qr-card,
+  .bank-card{
+    padding:30px 20px;
+  }
+
+  .qr-box img{
+    width:220px;
+  }
+
+}
 /* RESPONSIVE */
 
 @media(max-width:992px){
@@ -955,7 +1059,7 @@ section{
 <main>
 
 <!-- HERO -->
-<section class="hero">
+<section id="home" class="hero">
   <div class="container">
 
     <div class="hero-content">
@@ -978,7 +1082,7 @@ section{
 </section>
 
 <!-- ABOUT -->
-<section class="about">
+<section id="about" class="about">
 
   <div class="container">
 
@@ -1029,182 +1133,6 @@ section{
 
 </section>
 
-<!-- LEGAL DOCUMENTS -->
-<section>
-
-  <div class="container">
-
-    <div class="section-title">
-      <span>ਪਾਰਦਰਸ਼ਤਾ</span>
-      <h2>ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼</h2>
-    </div>
-
-    <div class="documents-grid">
-
-      <div class="document-card">
-        <div class="doc-icon">📄</div>
-        <h3>ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਸਰਟੀਫਿਕੇਟ</h3>
-        <p>ਸੰਸਥਾ ਦਾ ਅਧਿਕਾਰਕ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਸਰਟੀਫਿਕੇਟ।</p>
-
-        <button class="view-btn" onclick="openDocument('images/reg.jpeg')">
-          ਦਸਤਾਵੇਜ਼ ਵੇਖੋ
-        </button>
-      </div>
-
-      <div class="document-card">
-        <div class="doc-icon">🏦</div>
-        <h3>PAN ਕਾਰਡ</h3>
-        <p>ਸੰਸਥਾ ਦੇ PAN ਕਾਰਡ ਦੀ ਜਾਣਕਾਰੀ।</p>
-
-        <button class="view-btn" onclick="openDocument('images/pan.jpeg')">
-          ਦਸਤਾਵੇਜ਼ ਵੇਖੋ
-        </button>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<div class="document-modal" id="documentModal">
-  <span class="close-modal" onclick="closeDocument()">
-    &times;
-  </span>
-
-  <img id="documentImage" src="" alt="ਦਸਤਾਵੇਜ਼ ਪੂਰਵ ਦਰਸ਼ਨ">
-</div>
-
-<!-- TEAM -->
-<section class="team">
-
-  <div class="container">
-
-    <div class="section-title">
-      <span>ਮੈਂਬਰ</span>
-      <h2>ਟੀਮ ਮੈਂਬਰ</h2>
-    </div>
-
-    <div class="team-grid">
-
-      <div class="team-card">
-        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=900">
-        <h3>ਮੈਂਬਰ ਦਾ ਨਾਮ</h3>
-        <span>ਪ੍ਰਧਾਨ</span>
-      </div>
-
-      <div class="team-card">
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=900">
-        <h3>ਮੈਂਬਰ ਦਾ ਨਾਮ</h3>
-        <span>ਕੋਆਰਡੀਨੇਟਰ</span>
-      </div>
-
-      <div class="team-card">
-        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=900">
-        <h3>ਮੈਂਬਰ ਦਾ ਨਾਮ</h3>
-        <span>ਵਾਲੰਟੀਅਰ ਮੁਖੀ</span>
-      </div>
-
-      <div class="team-card">
-        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=900">
-        <h3>ਮੈਂਬਰ ਦਾ ਨਾਮ</h3>
-        <span>ਮੈਨੇਜਮੈਂਟ</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- GALLERY -->
-<section>
-
-  <div class="container">
-
-    <div class="section-title">
-      <span>ਗੈਲਰੀ</span>
-      <h2>ਸਾਡੀਆਂ ਗਤੀਵਿਧੀਆਂ ਅਤੇ ਪ੍ਰੋਗਰਾਮ</h2>
-    </div>
-
-    <div class="gallery-grid">
-
-      <div class="gallery-item">
-        <img src="images/gallery/1.jpeg">
-      </div>
-
-      <div class="gallery-item">
-        <img src="images/gallery/2.jpeg">
-      </div>
-
-      <div class="gallery-item">
-        <img src="images/gallery/3.jpeg">
-      </div>
-
-      <div class="gallery-item">
-        <img src="images/gallery/4.jpeg">
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- PROGRAMS -->
-<section class="programs">
-
-  <div class="container">
-
-    <div class="section-title">
-      <span>ਪ੍ਰੋਗਰਾਮ</span>
-      <h2>ਪ੍ਰੋਗਰਾਮ ਅਤੇ ਪਿਛਲਾ ਕੰਮ</h2>
-    </div>
-
-    <div class="program-grid">
-
-      <div class="program-card">
-        <img src="images/gallery/11.jpeg">
-
-        <div class="program-content">
-          <h3>ਅੰਬੇਡਕਰ ਜਯੰਤੀ ਪ੍ਰੋਗਰਾਮ</h3>
-
-          <p>
-            ਹਜ਼ਾਰਾਂ ਲੋਕਾਂ ਦੀ ਭਾਗੀਦਾਰੀ ਨਾਲ ਸਮਾਜਿਕ ਜਾਗਰੂਕਤਾ ਰੈਲੀ
-            ਅਤੇ ਸਮਾਰੋਹ ਦਾ ਆਯੋਜਨ ਕੀਤਾ ਗਿਆ।
-          </p>
-        </div>
-      </div>
-
-      <div class="program-card">
-        <img src="images/gallery/12.jpeg">
-
-        <div class="program-content">
-          <h3>ਖੂਨ ਦਾਨ ਕੈਂਪ</h3>
-
-          <p>
-            ਲੋੜਵੰਦ ਮਰੀਜ਼ਾਂ ਦੀ ਸਹਾਇਤਾ ਲਈ ਖੂਨ ਦਾਨ ਕੈਂਪ ਦਾ ਆਯੋਜਨ ਕੀਤਾ ਗਿਆ।
-          </p>
-        </div>
-      </div>
-
-      <div class="program-card">
-        <img src="images/gallery/13.jpeg">
-
-        <div class="program-content">
-          <h3>ਭਜਨ ਅਤੇ ਸਤਸੰਗ</h3>
-
-          <p>
-            ਸੰਸਥਾ ਵੱਲੋਂ ਆਧਿਆਤਮਿਕ ਅਤੇ ਸਮਾਜਿਕ ਏਕਤਾ ਦਾ ਪ੍ਰੋਗਰਾਮ ਕਰਵਾਇਆ ਗਿਆ।
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
 
 <!-- COMMUNITY CENTER -->
 <section>
@@ -1247,44 +1175,32 @@ section{
 
 </section>
 
-<!-- UPCOMING EVENT -->
-<section class="event">
+<!-- GALLERY -->
+<section id="gallery">
 
   <div class="container">
 
-    <div class="event-card">
+    <div class="section-title">
+      <span>ਗੈਲਰੀ</span>
+      <h2>ਸਾਡੀਆਂ ਗਤੀਵਿਧੀਆਂ ਅਤੇ ਪ੍ਰੋਗਰਾਮ</h2>
+    </div>
 
-      <div class="event-grid">
+    <div class="gallery-grid">
 
-        <div class="event-image">
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1400&auto=format&fit=crop"
-          alt="ਸਮਾਜਿਕ ਜਾਗਰੂਕਤਾ ਪ੍ਰੋਗਰਾਮ">
-        </div>
+      <div class="gallery-item">
+        <img src="images/gallery/1.jpeg">
+      </div>
 
-        <div class="event-content">
+      <div class="gallery-item">
+        <img src="images/gallery/2.jpeg">
+      </div>
 
-          <div class="section-title" style="text-align:left;margin-bottom:20px">
-            <span>ਆਉਣ ਵਾਲਾ ਪ੍ਰੋਗਰਾਮ</span>
-          </div>
+      <div class="gallery-item">
+        <img src="images/gallery/3.jpeg">
+      </div>
 
-          <h2>ਸਮਾਜਿਕ ਜਾਗਰੂਕਤਾ ਪ੍ਰੋਗਰਾਮ</h2>
-
-          <p>
-            ਸਿੱਖਿਆ, ਬਰਾਬਰੀ, ਯੁਵਾ ਸਸ਼ਕਤੀਕਰਨ ਅਤੇ ਸਮਾਜਿਕ ਨਿਆਂ ਤੇ ਕੇਂਦ੍ਰਿਤ
-            ਇੱਕ ਵਿਸ਼ੇਸ਼ ਜਾਗਰੂਕਤਾ ਪ੍ਰੋਗਰਾਮ।
-          </p>
-
-          <p>
-            ਡਾ. ਭੀਮ ਰਾਓ ਅੰਬੇਡਕਰ ਸਮਾਜ ਸੇਵਾ ਸਭਾ ਵੱਲੋਂ ਸਮਾਜਿਕ ਵਿਕਾਸ,
-            ਜਨ ਜਾਗਰੂਕਤਾ ਅਤੇ ਸਮਾਜਿਕ ਸਸ਼ਕਤੀਕਰਨ ਲਈ ਆਯੋਜਿਤ।
-          </p>
-
-          <a href="#contact" class="btn btn-primary">
-            ਪ੍ਰੋਗਰਾਮ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ
-          </a>
-
-        </div>
-
+      <div class="gallery-item">
+        <img src="images/gallery/4.jpeg">
       </div>
 
     </div>
@@ -1293,7 +1209,196 @@ section{
 
 </section>
 
-<!-- CONTACT -->
+<!-- LEGAL DOCUMENTS -->
+<section id="legal">
+
+  <div class="container">
+
+    <div class="section-title">
+      <span>ਪਾਰਦਰਸ਼ਤਾ</span>
+      <h2>ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼</h2>
+    </div>
+
+    <div class="documents-grid">
+
+      <div class="document-card">
+        <div class="doc-icon">📄</div>
+        <h3>ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਸਰਟੀਫਿਕੇਟ</h3>
+        <p>ਸੰਸਥਾ ਦਾ ਅਧਿਕਾਰਕ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਸਰਟੀਫਿਕੇਟ।</p>
+
+        <button class="view-btn" onclick="openDocument('images/reg.jpeg')">
+          ਦਸਤਾਵੇਜ਼ ਵੇਖੋ
+        </button>
+      </div>
+
+      <div class="document-card">
+        <div class="doc-icon">🏦</div>
+        <h3>PAN ਕਾਰਡ</h3>
+        <p>ਸੰਸਥਾ ਦੇ PAN ਕਾਰਡ ਦੀ ਜਾਣਕਾਰੀ।</p>
+
+        <button class="view-btn" onclick="openDocument('images/pan.jpeg')">
+          ਦਸਤਾਵੇਜ਼ ਵੇਖੋ
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROGRAMS -->
+<!-- PROGRAMS -->
+<section id="programs" class="programs">
+
+  <div class="container">
+
+    <div class="section-title">
+      <span>ਸੇਵਾ ਪ੍ਰੋਗਰਾਮ</span>
+      <h2>ਚੱਲ ਰਹੇ ਸੇਵਾ ਕਾਰਜ</h2>
+    </div>
+
+    <div class="program-grid">
+
+      <div class="program-card">
+        <img src="images/machine.jpg" alt="ਸਿਲਾਈ ਮਸ਼ੀਨ ਵੰਡ">
+
+        <div class="program-content">
+          <h3>ਸਾਲਾਨਾ ਸਿਲਾਈ ਮਸ਼ੀਨ ਵੰਡ</h3>
+          <p>
+            ਲੋੜਵੰਦ ਮਹਿਲਾਵਾਂ ਨੂੰ ਆਤਮਨਿਰਭਰ ਬਣਾਉਣ ਲਈ ਹਰ ਸਾਲ ਸਿਲਾਈ ਮਸ਼ੀਨਾਂ ਵੰਡੀਆਂ ਜਾਂਦੀਆਂ ਹਨ।
+          </p>
+
+          <div class="donation-row">
+            <div>
+              <span>ਇਕੱਠਾ ਹੋਇਆ</span>
+              <b>₹45,000</b>
+            </div>
+            <div>
+              <span>ਲਕਸ਼</span>
+              <b>₹1,00,000</b>
+            </div>
+          </div>
+
+          <div class="progress-bar">
+            <span style="width:45%"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="images/kabddi.jpeg" alt="ਕਬੱਡੀ ਮੁਕਾਬਲਾ">
+
+        <div class="program-content">
+          <h3>ਕਬੱਡੀ ਮੁਕਾਬਲਾ</h3>
+          <p>
+            ਨੌਜਵਾਨਾਂ ਨੂੰ ਖੇਡਾਂ ਨਾਲ ਜੋੜਨ ਅਤੇ ਨਸ਼ਿਆਂ ਤੋਂ ਦੂਰ ਰੱਖਣ ਲਈ ਕਬੱਡੀ ਮੁਕਾਬਲਾ ਕਰਵਾਇਆ ਜਾਂਦਾ ਹੈ।
+          </p>
+
+          <div class="donation-row">
+            <div>
+              <span>ਇਕੱਠਾ ਹੋਇਆ</span>
+              <b>₹70,000</b>
+            </div>
+            <div>
+              <span>ਲਕਸ਼</span>
+              <b>₹1,50,000</b>
+            </div>
+          </div>
+
+          <div class="progress-bar">
+            <span style="width:47%"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="images/ambulance.avif" alt="ਐਮਰਜੈਂਸੀ ਐਂਬੂਲੈਂਸ">
+
+        <div class="program-content">
+          <h3>ਐਮਰਜੈਂਸੀ ਐਂਬੂਲੈਂਸ ਸੇਵਾ</h3>
+          <p>
+            ਪਿੰਡ ਅਤੇ ਆਸ-ਪਾਸ ਦੇ ਇਲਾਕਿਆਂ ਲਈ ਤੁਰੰਤ ਮੈਡੀਕਲ ਸਹਾਇਤਾ ਦੇਣ ਵਾਸਤੇ ਐਂਬੂਲੈਂਸ ਸੇਵਾ ਸ਼ੁਰੂ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ।
+          </p>
+
+          <div class="donation-row">
+            <div>
+              <span>ਇਕੱਠਾ ਹੋਇਆ</span>
+              <b>₹2,20,000</b>
+            </div>
+            <div>
+              <span>ਲਕਸ਼</span>
+              <b>₹8,00,000</b>
+            </div>
+          </div>
+
+          <div class="progress-bar">
+            <span style="width:28%"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div class="document-modal" id="documentModal">
+  <span class="close-modal" onclick="closeDocument()">
+    &times;
+  </span>
+
+  <img id="documentImage" src="" alt="ਦਸਤਾਵੇਜ਼ ਪੂਰਵ ਦਰਸ਼ਨ">
+</div>
+
+<!-- TEAM -->
+<section class="team">
+
+  <div class="container">
+
+    <div class="section-title">
+      <span>ਮੈਂਬਰ</span>
+      <h2>ਟੀਮ ਮੈਂਬਰ</h2>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-card">
+        <img src="images/president.jpeg" alt="ਪ੍ਰਧਾਨ">
+        <h3>ਪ੍ਰਧਾਨ</h3>
+        <span>ਸ. ਬਿੰਦਰਪਾਲ ਸਿੰਘ</span>
+      </div>
+
+      <div class="team-card">
+        <img src="images/vice- president.jpeg" alt="ਉਪ ਪ੍ਰਧਾਨ">
+        <h3>ਉਪ ਪ੍ਰਧਾਨ</h3>
+        <span>ਸ. ਮਨਜੀਤ ਸਿੰਘ</span>
+      </div>
+
+      <div class="team-card">
+        <img src="images/general secretary.jpeg" alt="ਜਨਰਲ ਸਕੱਤਰ">
+        <h3>ਜਨਰਲ ਸਕੱਤਰ</h3>
+        <span>ਸ. ਗੁਰਦੇਵ ਸਿੰਘ</span>
+      </div>
+
+      <div class="team-card">
+        <img src="images/cashier.jpeg" alt="ਖਜ਼ਾਨਚੀ">
+        <h3>ਖਜ਼ਾਨਚੀ</h3>
+        <span>ਸ. ਗੁਰਪ੍ਰੀਤ ਸਿੰਘ</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+<!-- DONATION -->
 <section id="contact">
 
   <div class="container">
@@ -1305,60 +1410,50 @@ section{
 
     <div class="contact-grid">
 
-      <div class="payment-box">
+      <!-- QR CARD -->
+      <div class="qr-card">
 
-        <h3>ਦਾਨ ਦੀ ਜਾਣਕਾਰੀ</h3>
+        <h3>QR ਕੋਡ ਰਾਹੀਂ ਦਾਨ ਕਰੋ</h3>
 
         <div class="qr-box">
-          <img src="images/qr.png">
+          <img src="images/qr.png" alt="Donation QR Code">
         </div>
 
-        <div class="bank-item">
-          <span>ਖਾਤਾ ਨਾਮ</span>
-          <b>NGO Foundation</b>
-        </div>
-
-        <div class="bank-item">
-          <span>ਖਾਤਾ ਨੰਬਰ</span>
-          <b>XXXXXXXXXXXX</b>
-        </div>
-
-        <div class="bank-item">
-          <span>IFSC ਕੋਡ</span>
-          <b>XXXX0000</b>
-        </div>
+        
 
       </div>
 
-      <div class="form-box">
+      <!-- BANK DETAILS CARD -->
+      <div class="bank-card">
 
-        <h3>ਸੰਪਰਕ ਫਾਰਮ</h3>
+  <h3>ਬੈਂਕ ਖਾਤੇ ਦੀ ਜਾਣਕਾਰੀ</h3>
 
-        <form>
+  <div class="bank-item">
+    <span>ਖਾਤਾ ਧਾਰਕ ਦਾ ਨਾਮ</span>
+    <b>ਡਾ. ਭੀਮ ਰਾਓ ਅੰਬੇਡਕਰ ਸਮਾਜ ਸੇਵਾ ਸਭਾ (ਰਜਿ.)</b>
+  </div>
 
-          <div class="form-group">
-            <input type="text" placeholder="ਪੂਰਾ ਨਾਮ">
-          </div>
+  <div class="bank-item">
+    <span>ਖਾਤਾ ਨੰਬਰ</span>
+    <b>926010021406933</b>
+  </div>
 
-          <div class="form-group">
-            <input type="email" placeholder="ਈਮੇਲ ਪਤਾ">
-          </div>
+  <div class="bank-item">
+    <span>ਆਈ.ਐਫ.ਐਸ.ਸੀ. (IFSC) ਕੋਡ</span>
+    <b>UTIB0005355</b>
+  </div>
 
-          <div class="form-group">
-            <input type="tel" placeholder="ਫੋਨ ਨੰਬਰ">
-          </div>
+  <div class="bank-item">
+    <span>ਬੈਂਕ ਦਾ ਨਾਮ</span>
+    <b>ਐਕਸਿਸ ਬੈਂਕ (Axis Bank)</b>
+  </div>
 
-          <div class="form-group">
-            <textarea placeholder="ਆਪਣਾ ਸੁਨੇਹਾ ਲਿਖੋ"></textarea>
-          </div>
+  <div class="bank-item">
+    <span>ਸ਼ਾਖਾ</span>
+    <b>ਘਨੌਰ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ – 140702</b>
+  </div>
 
-          <button type="submit" class="submit-btn">
-            ਪੁੱਛਗਿੱਛ ਭੇਜੋ
-          </button>
-
-        </form>
-
-      </div>
+</div>
 
     </div>
 
