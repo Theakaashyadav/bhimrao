@@ -528,7 +528,6 @@ section{
   }
 }
 /* ANNOUNCEMENT */
-
 .announcement-card{
   background:var(--gradient-main);
   padding:60px;
@@ -557,13 +556,83 @@ section{
   margin-bottom:18px;
 }
 
-.announcement-img img{
-  border-radius:28px;
-  height:500px;
-  object-fit:cover;
-  border:6px solid rgba(255,255,255,.9);
+/* Multiple Images Gallery */
+.announcement-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
 }
 
+.announcement-gallery img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  border-radius:20px;
+  border:4px solid rgba(255,255,255,.9);
+  transition:all .35s ease;
+  cursor:pointer;
+  display:block;
+}
+
+.announcement-gallery img:hover{
+  transform:translateY(-5px) scale(1.03);
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+
+/* Tablet */
+@media(max-width:992px){
+
+  .announcement-card{
+    padding:40px;
+  }
+
+  .announcement-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+  .announcement-card{
+    padding:25px 18px;
+    border-radius:25px;
+  }
+
+  .announcement-gallery{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .announcement-gallery img{
+    height:150px;
+    border-radius:15px;
+    border-width:3px;
+  }
+
+}
+
+/* Small Mobile */
+@media(max-width:480px){
+
+  .announcement-card{
+    padding:20px 15px;
+  }
+
+  .announcement-gallery{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+  }
+
+  .announcement-gallery img{
+    height:120px;
+    border-radius:12px;
+    border-width:2px;
+  }
+
+}
 /* EVENT */
 
 .event{
@@ -1163,9 +1232,12 @@ section{
 
         </div>
 
-        <div class="announcement-img">
-          <img src="images/gallery/location/1.jpeg">
-        </div>
+        <div class="announcement-gallery">
+    <img src="images/gallery/location/1.jpeg" alt="">
+    <img src="images/gallery/location/2.jpeg" alt="">
+    <img src="images/gallery/location/3.jpeg" alt="">
+    <img src="images/gallery/location/4.jpeg" alt="">
+</div>
 
       </div>
 
