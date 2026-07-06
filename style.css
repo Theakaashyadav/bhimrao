@@ -1374,3 +1374,244 @@ section{
     min-height:220px;
   }
 }
+
+/* RESPONSIVE HARDENING */
+
+*{
+  min-width:0;
+}
+
+body{
+  line-height:1.6;
+}
+
+p,
+h1,
+h2,
+h3,
+span,
+a,
+b{
+  overflow-wrap:break-word;
+}
+
+.container{
+  padding-left:clamp(14px,4vw,24px);
+  padding-right:clamp(14px,4vw,24px);
+}
+
+.about-grid,
+.announcement-grid,
+.upcoming-event-card,
+.past-event-single,
+.event-grid,
+.contact-grid{
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));
+}
+
+.documents-grid,
+.team-grid,
+.gallery-grid,
+.program-grid{
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));
+}
+
+.upcoming-event-image img,
+.past-event-image img,
+.about-img img,
+.announcement-gallery img,
+.program-card img,
+.team-card img,
+.gallery-item img{
+  max-height:none;
+}
+
+.event-info div{
+  align-items:flex-start;
+}
+
+.event-info i{
+  flex:0 0 22px;
+  line-height:1.6;
+}
+
+.donation-row{
+  flex-wrap:wrap;
+}
+
+.btn,
+.view-btn{
+  max-width:100%;
+  text-align:center;
+  white-space:normal;
+}
+
+@media(max-width:992px){
+  .upcoming-event-content,
+  .past-event-content,
+  .event-content{
+    padding:clamp(24px,5vw,40px);
+  }
+}
+
+@media(max-width:640px){
+  .hero{
+    min-height:calc(100svh - 120px);
+  }
+
+  .hero-content{
+    max-width:100%;
+  }
+
+  .hero-content h1{
+    font-size:clamp(28px,9vw,36px);
+  }
+
+  .section-title h2,
+  .upcoming-event-content h3,
+  .past-event-content h3{
+    font-size:clamp(24px,7vw,30px);
+  }
+
+  .about-grid,
+  .announcement-card,
+  .upcoming-event-card,
+  .past-event-single,
+  .event-card,
+  .qr-card,
+  .bank-card{
+    border-radius:20px;
+  }
+
+  .upcoming-event-image img,
+  .past-event-image img{
+    min-height:0;
+    height:auto;
+    aspect-ratio:16 / 10;
+  }
+
+  .about-img img{
+    height:auto;
+    aspect-ratio:4 / 3;
+  }
+
+  .documents-grid,
+  .team-grid,
+  .gallery-grid,
+  .program-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+  }
+
+  .program-card img,
+  .team-card img{
+    height:auto;
+    aspect-ratio:4 / 3;
+  }
+
+  .document-card{
+    max-width:100%;
+    padding:18px 10px;
+  }
+
+  .program-content{
+    padding:14px 10px;
+  }
+
+  .program-content h3,
+  .document-card h3,
+  .team-card h3{
+    font-size:14px;
+    line-height:1.35;
+  }
+
+  .program-content p,
+  .document-card p,
+  .team-card span{
+    font-size:12px;
+    line-height:1.55;
+  }
+
+  .event-badge,
+  .event-date{
+    width:auto;
+    max-width:100%;
+    align-items:flex-start;
+    border-radius:18px;
+  }
+}
+
+@media(max-width:420px){
+  .container{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .top-bar{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .top-bar > div:first-child{
+    flex-basis:100%;
+    justify-content:center;
+  }
+
+  .upcoming-event-content,
+  .past-event-content,
+  .event-content,
+  .qr-card,
+  .bank-card{
+    padding:18px 14px;
+  }
+
+  .documents-grid,
+  .team-grid,
+  .gallery-grid,
+  .program-grid,
+  .announcement-gallery{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .gallery-item img,
+  .announcement-gallery img{
+    height:auto;
+    aspect-ratio:4 / 3;
+  }
+
+  .donation-row{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:340px){
+  .documents-grid,
+  .team-grid,
+  .gallery-grid,
+  .program-grid,
+  .announcement-gallery{
+    gap:8px;
+  }
+
+  .document-card{
+    padding:12px 6px;
+  }
+
+  .program-content{
+    padding:12px 8px;
+  }
+
+  .program-content h3,
+  .document-card h3,
+  .team-card h3{
+    font-size:12px;
+  }
+
+  .program-content p,
+  .document-card p,
+  .team-card span{
+    font-size:10px;
+  }
+}
